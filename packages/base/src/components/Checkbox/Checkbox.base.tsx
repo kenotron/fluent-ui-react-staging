@@ -10,7 +10,6 @@ export const CheckboxBase: React.FunctionComponent<ICheckboxProps> = (
         root: Root = "label",
         input: Input = "input",
         icon: Icon = "i" 
-
     } = (slots || {}) as ICheckboxSlots;
 
     const { slotProps = {} } = useCheckbox(props);

@@ -16,17 +16,17 @@ export type ICheckboxSlotProps = ISlotProps<ICheckboxSlots>;
 export interface ICheckboxClasses extends IClasses<ICheckboxSlots> {}
 
 export interface ICheckboxProps extends ISlottableProps<ICheckboxSlotProps, ICheckboxClasses> {
-  /** Defines the children of the Checkbox component. */
-  children?: React.ReactNode;
-
-  /** Defines whether the Checkbox is in an enabled or disabled state. */
-  disabled?: boolean;
-  
   /** Defines whether default value of the checkbox is checked or unchecked. (Controlled) */
   checked?: boolean;
 
-  /** default value (uncontrolled) */
+  /** Defines the children of the Checkbox component. */
+  children?: React.ReactNode;
+
+  /** Defines the default value of the checkbox for uncontrolled scenarios. */
   defaultChecked?: boolean;
+
+  /** Defines whether the Checkbox is in an enabled or disabled state. */
+  disabled?: boolean;
   
   /** Defines a callback that is triggered when the Checkbox is toggled. */
   onChange?: (ev: MouseEvent, checked: boolean) => void;

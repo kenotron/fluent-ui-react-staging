@@ -10,7 +10,7 @@ export interface ICheckboxState {
 }
 
 const useCheckboxState = (userProps: ICheckboxProps): ICheckboxState => {
-  const { disabled, onChange, checked: controlledValue, defaultChecked } = userProps;
+  const { checked: controlledValue, defaultChecked, disabled, onChange } = userProps;
 
   const [isChecked, setChecked] = useControlledState(controlledValue, defaultChecked);
 
