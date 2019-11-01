@@ -638,7 +638,7 @@ An extra consideration needs to be made for forcing focus into the menu item on 
 #### Submenu Items
 A submenu item should have all of the same states and behaviors as menu items with the only difference being that submenu items lack an `onClick` callback.
 
-Needs to provide a way for menus to open on hover as many submenus have that behavior.
+A submenu item needs to provide a way for menus to open on hover as many submenus have that behavior.
 
 ##### Open
 The menu item should have different state depending on if it is open or not
