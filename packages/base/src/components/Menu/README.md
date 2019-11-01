@@ -641,7 +641,7 @@ A submenu item should have all of the same states and behaviors as menu items wi
 A submenu item needs to provide a way for menus to open on hover as many submenus have that behavior.
 
 ##### Open
-The menu item should have different state depending on if it is open or not
+A menu item should have a different state depending on if it is open or not.
 
 ### Theming && customization
 The menu should have as few opinions on theming as possible, allowing the items to determine customizations as much as possible. There should also be a way to easily remove the theme entirely from the menu so the items can determine the look and feel.
