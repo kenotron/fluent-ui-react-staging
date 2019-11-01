@@ -557,7 +557,7 @@ function() {
 
 #### Submenu
 Maybe should be named SubmenuContext?
-Should submenu have it's own context?
+Should submenu have its own context?
 ```TSX
 function() {
 return (
