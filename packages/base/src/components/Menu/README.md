@@ -502,7 +502,7 @@ _Note:_ Some long class names removed
     </div>
         <!-->
             I'm not sure if this is the right role or if it is actually a menu item. It should
-            probably be related to it's parent item in some way
+            probably be related to its parent's item in some way.
         <-->
     <div role="presentation">
         <!-->
