@@ -33,6 +33,10 @@
 - replace docs-components useXYZKnobs and code-sandbox with storybook knobs
 - remove index.ts/index.tsx files
 
+### Tests
+
+- had to comment out behavior-tests.ts in accessibility (depends on docs?)
+
 ### TODO
 
 - @types rationalization - do we install from @fluent/scripts or inside the packages?
