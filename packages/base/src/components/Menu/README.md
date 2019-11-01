@@ -636,7 +636,7 @@ The menu item should change border and background color on hover.
 An extra consideration needs to be made for forcing focus into the menu item on hover. Menus on most Microsoft desktop applications work this way. We should ensure there is a way to achieve this behavior through composition or props.
 
 #### Submenu Items
-Should have all of the same states and behaviors except for it shouldn't get an onClick.
+A submenu item should have all of the same states and behaviors as menu items with the only difference being that submenu items lack an `onClick` callback.
 
 Needs to provide a way for menus to open on hover as many submenus have that behavior.
 
