@@ -1,5 +1,5 @@
+const config = require('@fluentui/scripts/config/jest/jest.stardust-ui')
 module.exports = {
-  ...require('@stardust-ui/internal-tooling/jest'),
+  ...config,
   name: 'react-bindings',
-  moduleNameMapper: require('lerna-alias').jest(),
 }

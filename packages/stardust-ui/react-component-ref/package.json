@@ -28,7 +28,8 @@
   },
   "repository": "stardust-ui/react.git",
   "scripts": {
-    "build": "just-scripts build"
+    "build": "just-scripts build",
+    "test": "just-scripts test"
   },
   "sideEffects": false
 }
