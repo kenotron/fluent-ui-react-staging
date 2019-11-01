@@ -7,6 +7,7 @@ export default {
 };
 
 const _onChange = () => {
+    // eslint-disable-next-line no-console
     console.log("Checkbox was clicked.");
 }
 
