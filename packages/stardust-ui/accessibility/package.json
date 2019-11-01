@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",
+    "@types/enzyme": "^3.10.3",
     "@fluentui/scripts": "1.0.1"
   },
   "files": [
@@ -23,7 +24,8 @@
   },
   "repository": "stardust-ui/react.git",
   "scripts": {
-    "build": "just-scripts build"
+    "build": "just-scripts build",
+    "test": "just-scripts test"
   },
   "sideEffects": false
 }
