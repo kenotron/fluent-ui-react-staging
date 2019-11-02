@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useImperativeHandle, useRef } from "react";
 import { mergeSlotProps } from "@fluentui/react-theming";
 import { ILinkProps } from "./Link.types";
 
@@ -7,7 +7,15 @@ export interface ILinkState {
 }
 
 const useLinkState = (userProps: ILinkProps): ILinkState => {
-  const rootRef = React.useRef<HTMLElement>(null);
+  const { componentRef } = userProps;
+  
+  const rootRef = useRef<HTMLElement>(null);
+
+  useImperativeHandle(componentRef, () => ({
+    focus: () => {
+      rootRef.current && rootRef.current.focus();
+    }
+  }));
 
   return { 
     rootRef

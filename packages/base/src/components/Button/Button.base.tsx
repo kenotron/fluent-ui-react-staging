@@ -8,7 +8,7 @@ export const ButtonBase: React.FunctionComponent<IButtonProps> = (props: IButton
         endIcon: EndIcon = "i",
         root: Root = href ? 'a' : 'button',
         startIcon: StartIcon = "i"
-    } = (slots || {}) as IButtonSlots;
+    } = slots || ({} as IButtonSlots);
 
     const { slotProps = {} } = useButton(props);
 

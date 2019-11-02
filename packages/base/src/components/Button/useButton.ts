@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useImperativeHandle, useRef } from "react";
 import { mergeSlotProps } from "@fluentui/react-theming";
 import { IButtonProps } from "./Button.types";
 
@@ -8,9 +8,15 @@ export interface IButtonState {
 }
 
 const useButtonState = (userProps: IButtonProps): IButtonState => {
-  const { disabled, onClick } = userProps;
+  const { componentRef, disabled, onClick } = userProps;
 
-  const rootRef = React.useRef<HTMLElement>(null);
+  const rootRef = useRef<HTMLElement>(null);
+
+  useImperativeHandle(componentRef, () => ({
+    focus: () => {
+      rootRef.current && rootRef.current.focus();
+    }
+  }));
 
   const onButtonClick = (ev: MouseEvent) => {
     if (!disabled && onClick) {

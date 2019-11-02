@@ -9,7 +9,7 @@ export const LinkBase: React.FunctionComponent<ILinkProps> = (
   const { children, href, slots } = props;
     const {
         root: Root = href ? 'a' : 'button'
-    } = (slots || {}) as ILinkSlots;
+      } = slots || ({} as ILinkSlots);
 
     const { slotProps = {} } = useLink(props);
 
