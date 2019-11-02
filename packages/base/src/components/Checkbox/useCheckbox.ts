@@ -18,7 +18,7 @@ const useCheckboxState = (userProps: ICheckboxProps): ICheckboxState => {
 
   const onCheckboxChange = (ev: MouseEvent, checked: boolean) => {
     if (!disabled && onChange) {
-      onChange(ev, !checked);
+      onChange(ev, !isChecked);
       
       setChecked(!isChecked);
     
