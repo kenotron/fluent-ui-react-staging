@@ -1,10 +1,8 @@
-const commonConfig = require('@stardust-ui/internal-tooling/jest')
-
+const config = require('@fluentui/scripts/config/jest/jest.stardust-ui')
 module.exports = {
-  ...commonConfig,
+  ...config,
   name: 'react',
   moduleNameMapper: {
-    ...require('lerna-alias').jest(),
     'docs/(.*)$': `<rootDir>/../../docs/$1`,
 
     // Legacy aliases, they should not be used in new tests

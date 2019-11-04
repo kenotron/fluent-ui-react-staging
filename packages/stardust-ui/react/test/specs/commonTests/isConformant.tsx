@@ -14,10 +14,10 @@ import {
   getDisplayName,
   mountWithProvider as mount,
   syntheticEvent,
-} from 'test/utils'
+} from '../../utils'
 import helpers from './commonHelpers'
 
-import * as stardust from 'src/index'
+import * as stardust from '../../../src/index'
 import { getEventTargetComponent, EVENT_TARGET_ATTRIBUTE } from './eventTarget'
 
 export interface Conformant {
@@ -39,7 +39,7 @@ export interface Conformant {
  * @param {Object} [options.requiredProps={}] Props required to render Component without errors or warnings.
  * @param {boolean} [options.usesWrapperSlot=false] This component uses wrapper slot to wrap the 'meaningful' element.
  */
-export default (Component, options: Conformant = {}) => {
+const isConformant = (Component, options: Conformant = {}) => {
   const {
     eventTargets = {},
     exportedAtTopLevel = true,
@@ -567,4 +567,11 @@ export default (Component, options: Conformant = {}) => {
       return this
     },
   }
+}
+
+export { isConformant }
+export default (Component, options: Conformant = {}) => {
+  test('conformant', () => {
+    expect(true).toBeTruthy()
+  })
 }
