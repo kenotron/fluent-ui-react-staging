@@ -1,5 +1,5 @@
 {
-  "extends": "../../../build/tsconfig.common",
+  "extends": "@fluentui/scripts/config/typescript/tsconfig.stardust-ui.json",
   "compilerOptions": {
     "paths": {
       "docs/*": ["docs/*"],
