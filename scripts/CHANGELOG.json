@@ -2,6 +2,32 @@
   "name": "@fluentui/scripts",
   "entries": [
     {
+      "date": "Tue, 05 Nov 2019 23:42:53 GMT",
+      "tag": "@fluentui/scripts_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "none": [
+          {
+            "comment": "added jest tests for all stardust-ui packages except for the main react package",
+            "author": "kchau@microsoft.com",
+            "commit": "b92cc879cee1c8baccefe2656076d1599dca844d"
+          },
+          {
+            "comment": "adding jest tests back to stardust, but not doing real conformance test yet",
+            "author": "kchau@microsoft.com",
+            "commit": "433f6ce7343c2462c2a223cb5e1cf0eb5262f795"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "upgrading to the full TS 3.7 experience",
+            "author": "kchau@microsoft.com",
+            "commit": "becd7a52d4e31694de38ac602cee6246dc550cec"
+          }
+        ]
+      }
+    },
+    {
       "date": "Fri, 25 Oct 2019 19:36:25 GMT",
       "tag": "@fluentui/scripts_v1.0.1",
       "version": "1.0.1",

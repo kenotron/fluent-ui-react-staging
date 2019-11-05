@@ -1,9 +1,0 @@
-{
-  "type": "patch",
-  "comment": "upgrading to the full TS 3.7 experience",
-  "packageName": "@fluentui/scripts",
-  "email": "kchau@microsoft.com",
-  "commit": "becd7a52d4e31694de38ac602cee6246dc550cec",
-  "date": "2019-11-05T23:25:41.414Z",
-  "file": "/Users/ken/workspace/fluent/change/@fluentui-scripts-2019-11-05-15-25-41-ts37.json"
-}

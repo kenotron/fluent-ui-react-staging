@@ -1,0 +1,19 @@
+{
+  "name": "@stardust-ui/react-bindings",
+  "entries": [
+    {
+      "date": "Tue, 05 Nov 2019 23:42:53 GMT",
+      "tag": "@stardust-ui/react-bindings_v0.40.0",
+      "version": "0.40.0",
+      "comments": {
+        "none": [
+          {
+            "comment": "added jest tests for all stardust-ui packages except for the main react package",
+            "author": "kchau@microsoft.com",
+            "commit": "b92cc879cee1c8baccefe2656076d1599dca844d"
+          }
+        ]
+      }
+    }
+  ]
+}
