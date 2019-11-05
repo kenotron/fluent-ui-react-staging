@@ -36,10 +36,10 @@
 >
 > | Name           | Type (default value if clarification needed) | Purpose                                                                                    |
 > | -------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------ |
-> | `as`           | string (div)                                 | Replaces the primitive root element type.                                                  |
-> | `className`    | string                                       | Allows the author to add a class name to the root element.                                 |
-> | `defaultValue` | number \| number[]                           | Provides the uncontrolled default value of the component, mutually exclusive with `value`. |
-> | `disabled`     | boolean                                      | Specifies whether a component should be disabled.                                          |  |
+> | `as`           | `string` (`"div"`)                                 | Replaces the primitive root element type.                                                  |
+> | `className`    | `string`                                       | Allows the author to add a class name to the root element.                                 |
+> | `defaultValue` | `number` \| `number[]`                           | Provides the uncontrolled default value of the component, mutually exclusive with `value`. |
+> | `disabled`     | `boolean`                                      | Specifies whether a component should be disabled.                                          |  |
 
 ## DOM hierarchy/structure
 
@@ -177,14 +177,15 @@
 > Common states: `hovered`, `pressed`, `focused`, `checked`, `checkedHovered`, `disabled`
 >
 > Example:
+>
 > | Name | Considerations |
 > | ------------------ | -------------- |
-> | background | Background on the root element in the idle enabled state. |
-> | railBorderColor | Border color of the rail. |
-> | railBorderRadius | Rail border radius. |
-> | railBorderWidth | |
-> | railBackground | Rail background color. |
-> | railBackgroundDisabled | Rail background color when disabled. |
+> | `background` | Background on the root element in the idle enabled state. |
+> | `railBorderColor` | Border color of the rail. |
+> | `railBorderRadius` | Rail border radius. |
+> | `railBorderWidth` | |
+> | `railBackground` | Rail background color. |
+> | `railBackgroundDisabled` | Rail background color when disabled. |
 
 ### Considerations for different screen sizes
 
