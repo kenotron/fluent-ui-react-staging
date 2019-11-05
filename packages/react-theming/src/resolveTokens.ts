@@ -47,7 +47,6 @@ class FunctionToken implements IToken {
   public value: any;
 
   resolve(theme: any): void {
-    debugger;
     const deps = Array.isArray(this.deps) ? this.deps : [this.deps];
     const resolvedDeps = deps.map(d => this.tokens[d].value);
     this.value = this.valueFn

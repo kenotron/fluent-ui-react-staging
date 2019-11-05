@@ -34,6 +34,7 @@ export type IResolvedTokens<TTokens> = {
 
 type IComponentOverrides = {
   tokens?: any;
+  styles?: any;
   slots?: any;
 };
 
@@ -98,3 +99,15 @@ export interface ITheme {
     [key: string]: ITheme;
   };
 }
+
+export type DeepPartial<T> = {
+  [key in keyof T]?: {
+    [key2 in keyof T[key]]?: T[key][key2];
+  };
+};
+
+export type IPartialTheme = DeepPartial<Omit<ITheme, "schemes">> & {
+  schemes?: {
+    [key: string]: IPartialTheme;
+  };
+};

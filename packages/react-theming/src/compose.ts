@@ -132,6 +132,7 @@ const _getClasses = (
     const sheet = jss.createStyleSheet(styles, {
       classNamePrefix: name + "-"
     });
+    sheet.update(theme);
     sheet.attach();
 
     classes = sheet.classes;

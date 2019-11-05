@@ -1,9 +1,9 @@
 import React from "react";
 import { Slider } from "./Slider";
 import { ISliderTokens } from "./Slider.tokens";
-import { ThemeContext, ITheme } from "@fluentui/react-theming";
+import { ThemeProvider, ITheme, createTheme } from "@fluentui/react-theming";
 import { number } from "prop-types";
-
+import { Box } from "@fluentui/react-theming";
 export default {
   component: "Slider",
   title: "Slider"
@@ -14,9 +14,10 @@ const defaultColorRamp = {
   index: -1
 };
 
-const theme: ITheme = {
+const fluentLight: ITheme = createTheme({
+  direction: "ltr",
   colors: {
-    background: "",
+    background: "white",
     brand: defaultColorRamp,
     accent: defaultColorRamp,
     neutral: defaultColorRamp,
@@ -31,7 +32,6 @@ const theme: ITheme = {
     scale: 0,
     unit: "px"
   },
-  direction: "ltr",
   fonts: {
     default: "",
     userContent: "",
@@ -50,11 +50,18 @@ const theme: ITheme = {
     base: 0,
     scale: 0,
     unit: "px"
-  }
-};
+  },
 
-const teamsThemeLight: ITheme = {
-  ...theme,
+  schemes: {
+    header: {
+      colors: {
+        background: "black"
+      }
+    }
+  }
+});
+
+const teamsLight: ITheme = createTheme(fluentLight, {
   components: {
     Slider: {
       tokens: {
@@ -71,23 +78,40 @@ const teamsThemeLight: ITheme = {
       } as ISliderTokens
     }
   }
-};
+});
 
 const Wrapper = (p: React.HTMLAttributes<any>) => (
-  <div>
-    <ThemeContext.Provider value={theme}>
-      <div style={{ padding: 20, ...p.style }}>{p.children}</div>
-    </ThemeContext.Provider>
-  </div>
+  <ThemeProvider theme={fluentLight} {...p} />
 );
 
 export const fluentSlider = () => (
-  <Wrapper>
+  <ThemeProvider theme={fluentLight}>
+    Default:
     <Slider
       defaultValue={50}
       slotProps={{ thumb: { "aria-label": "I am a slider" } }}
     />
-  </Wrapper>
+    Disabled:
+    <Slider
+      disabled
+      defaultValue={50}
+      slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+    />
+    Header scheme:
+    <ThemeProvider scheme="header">
+      Default:
+      <Slider
+        defaultValue={50}
+        slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+      />
+      Disabled:
+      <Slider
+        disabled
+        defaultValue={50}
+        slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+      />
+    </ThemeProvider>
+  </ThemeProvider>
 );
 
 export const fluentSliderDisabled = () => (
@@ -105,11 +129,7 @@ export const fluentVerticalSlider = () => (
 );
 
 export const teamsLightSlider = (p: React.HTMLAttributes<any>) => (
-  <Wrapper>
-    <ThemeContext.Provider value={teamsThemeLight}>
-      <div style={{ padding: 20, ...p.style }}>
-        <Slider defaultValue={50} />
-      </div>
-    </ThemeContext.Provider>
-  </Wrapper>
+  <ThemeProvider theme={teamsLight}>
+    <Slider defaultValue={50} />
+  </ThemeProvider>
 );

@@ -1,22 +1,18 @@
 import * as React from "react";
 import { ThemeContext, useTheme } from "../../themeContext";
 import { ITheme } from "../../theme.types";
-import ThemeProviderStyles from "./ThemeProvider.styles";
+import { Box } from "../Box/Box";
 
 export interface IThemeProviderProps {
   theme?: ITheme;
   scheme?: string;
 }
 
-const ThemeProviderContent = composed((props: ) => <div {...p} />, {
-  styles: {}
-});
-
-export const ThemeProviderBase = (
+export const ThemeProvider = (
   props: React.PropsWithChildren<IThemeProviderProps>
 ) => {
   const currentTheme = useTheme();
-  const { theme = currentTheme, scheme, children } = props;
+  let { theme = currentTheme, scheme, ...rest } = props;
 
   if (!theme) {
     throw new Error("Use a ThemeProvider component to provide a theme.");
@@ -26,9 +22,11 @@ export const ThemeProviderBase = (
     theme = theme.schemes[scheme] || theme;
   }
 
+  const { direction = "ltr" } = theme;
+
   return (
     <ThemeContext.Provider value={theme}>
-      <div>{children}</div>
+      <Box dir={direction} {...rest} />
     </ThemeContext.Provider>
   );
 };
