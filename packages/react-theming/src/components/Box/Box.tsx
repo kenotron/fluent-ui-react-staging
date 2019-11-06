@@ -4,8 +4,5 @@ import { compose } from "../../compose";
 
 export const Box = compose(
   PrimitiveBase,
-  {
-    name: "Box",
-    styles
-  }
+  { styles }
 );

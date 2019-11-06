@@ -42,6 +42,9 @@ type IComponentOverrideGroup = { [componentName: string]: IComponentOverrides };
 
 export type IThemeColorDefinition = {
   background: IColor;
+  bodyText: IColor;
+  subText: IColor;
+  disabledText: IColor;
 
   brand: IColorRamp;
   accent: IColorRamp;

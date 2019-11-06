@@ -18,12 +18,16 @@ const fluentLight: ITheme = createTheme({
   direction: "ltr",
   colors: {
     background: "white",
+    bodyText: "black",
+    subText: "#333",
+    disabledText: "#ccc",
     brand: defaultColorRamp,
     accent: defaultColorRamp,
     neutral: defaultColorRamp,
     success: defaultColorRamp,
     warning: defaultColorRamp,
-    danger: defaultColorRamp
+    danger: defaultColorRamp,
+    text: defaultColorRamp
   },
   components: {},
   icons: {},
@@ -55,13 +59,15 @@ const fluentLight: ITheme = createTheme({
   schemes: {
     header: {
       colors: {
-        background: "black"
+        background: "black",
+        bodyText: "white"
       }
     }
   }
 });
 
 const teamsLight: ITheme = createTheme(fluentLight, {
+  colors: {},
   components: {
     Slider: {
       tokens: {
@@ -86,7 +92,7 @@ const Wrapper = (p: React.HTMLAttributes<any>) => (
 
 export const fluentSlider = () => (
   <ThemeProvider theme={fluentLight}>
-    Default:
+    Default (ltr):
     <Slider
       defaultValue={50}
       slotProps={{ thumb: { "aria-label": "I am a slider" } }}
