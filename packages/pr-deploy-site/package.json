@@ -12,6 +12,6 @@
     "@fluentui/react": "0.1.0"
   },
   "devDependencies": {
-    "@fluentui/scripts": "1.0.1"
+    "@fluentui/scripts": "1.0.2"
   }
 }

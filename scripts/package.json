@@ -1,6 +1,6 @@
 {
   "name": "@fluentui/scripts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "index.ts",
   "bin": {
@@ -26,17 +26,18 @@
     "eslint-plugin-react-hooks": "^2.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "faker": "^4.1.0",
     "hard-source-webpack-plugin": "^0.13.1",
     "jest": "^24.9.0",
-    "just-scripts": "^0.32.1",
+    "just-scripts": "^0.34.1",
     "react-docgen-typescript-loader": "^3.2.0",
     "rollup": "^1.25.1",
     "rollup-plugin-dts": "^1.1.10",
     "simulant": "^0.2.2",
     "ts-jest": "^24.1.0",
-    "ts-loader": "^6.2.0",
+    "ts-loader": "^6.2.1",
     "ts-node": "^8.4.1",
-    "typescript": "^3.7.1-rc",
+    "typescript": "^3.7.2",
     "webpack-bundle-analyzer": "^3.6.0"
   },
   "devDependencies": {

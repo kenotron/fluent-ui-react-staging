@@ -1,9 +1,0 @@
-{
-  "type": "none",
-  "comment": "added jest tests for all stardust-ui packages except for the main react package",
-  "packageName": "@stardust-ui/react-proptypes",
-  "email": "kchau@microsoft.com",
-  "commit": "b92cc879cee1c8baccefe2656076d1599dca844d",
-  "date": "2019-11-01T23:55:57.277Z",
-  "file": "/Users/ken/workspace/fluent/change/@stardust-ui-react-proptypes-2019-11-01-16-56-02-jest.json"
-}

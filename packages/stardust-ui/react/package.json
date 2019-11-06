@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.144",
-    "@fluentui/scripts": "1.0.1",
+    "@fluentui/scripts": "1.0.2",
     "qs": "^6.8.0"
   },
   "files": [
@@ -49,6 +49,7 @@
   "repository": "stardust-ui/react.git",
   "scripts": {
     "build": "just-scripts build",
+    "test": "just-scripts test",
     "start": "just-scripts start"
   },
   "sideEffects": false

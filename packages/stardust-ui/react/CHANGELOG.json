@@ -1,0 +1,19 @@
+{
+  "name": "@stardust-ui/react",
+  "entries": [
+    {
+      "date": "Tue, 05 Nov 2019 23:42:53 GMT",
+      "tag": "@stardust-ui/react_v0.40.1",
+      "version": "0.40.1",
+      "comments": {
+        "none": [
+          {
+            "comment": "adding jest tests back to stardust, but not doing real conformance test yet",
+            "author": "kchau@microsoft.com",
+            "commit": "433f6ce7343c2462c2a223cb5e1cf0eb5262f795"
+          }
+        ]
+      }
+    }
+  ]
+}
