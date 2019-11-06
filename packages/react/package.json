@@ -31,7 +31,7 @@
     "start-test": "just-scripts test:watch"
   },
   "dependencies": {
-    "@fluentui/base": "^0.2.0",
+    "@fluentui/base": "^0.3.0",
     "@fluentui/react-theming": "^0.1.1",
     "react": "^16.9.0"
   },

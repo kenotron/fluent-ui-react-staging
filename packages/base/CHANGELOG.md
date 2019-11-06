@@ -1,7 +1,13 @@
 # Change Log - @fluentui/base
 
-This log was last generated on Wed, 30 Oct 2019 23:35:42 GMT and should not be manually modified.
+This log was last generated on Wed, 06 Nov 2019 21:01:40 GMT and should not be manually modified.
 
+## 0.3.0
+Wed, 06 Nov 2019 21:01:40 GMT
+
+### Minor changes
+
+- Checkbox: Adding base prototype. (email not defined)
 ## 0.2.0
 Wed, 30 Oct 2019 23:35:42 GMT
 
