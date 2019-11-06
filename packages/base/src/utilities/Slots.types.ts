@@ -23,5 +23,12 @@ export interface ISlottableProps<TSlots, TClasses> {
   slotProps?: Partial< ISlotProps<TSlots> >;
   
   /** Defines a TSlotProps object that  */
-  slots?: TSlots;
+  slots?: Partial<TSlots>;
+}
+
+/**
+ * Defines an interface that takes in TComponentProps and adds a ref to it.
+ */
+export type IStateProps<TComponentProps> = TComponentProps & {
+  componentRef?: React.Ref< Partial<HTMLElement> >;
 }

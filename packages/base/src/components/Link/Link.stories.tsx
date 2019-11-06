@@ -16,4 +16,4 @@ export const baseLinkWithoutHref = () => (
   <LinkBase>
     This renders as a button
   </LinkBase>
-); 
+);

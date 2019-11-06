@@ -1,4 +1,3 @@
-import { IComponentProps } from "../../utilities/ComponentProps.types";
 import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/Slots.types";
 
 export interface IButtonSlots {
@@ -16,12 +15,7 @@ export type IButtonSlotProps = ISlotProps<IButtonSlots>;
 
 export interface IButtonClasses extends IClasses<IButtonSlots> {}
 
-export interface IButton {
-    /** Sets focus on the Button. */
-    focus: () => void;
-}
-
-export interface IButtonProps extends IComponentProps<IButton>, ISlottableProps<IButtonSlots, IButtonClasses> {
+export interface IButtonProps extends ISlottableProps<IButtonSlots, IButtonClasses> {
     /** Defines the children of the Button component. */
     children?: React.ReactNode;
 

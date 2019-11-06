@@ -2,7 +2,7 @@ import React from "react";
 import { IButtonProps, IButtonSlots } from "./Button.types";
 import { useButton } from "./useButton";
 
-export const ButtonBase: React.FunctionComponent<IButtonProps> = (props: IButtonProps) => {
+export const ButtonBase = React.forwardRef((props: IButtonProps, componentRef: React.Ref<HTMLElement>) => {
     const { children, href, slots } = props;
     const {
         endIcon: EndIcon = "i",
@@ -10,7 +10,7 @@ export const ButtonBase: React.FunctionComponent<IButtonProps> = (props: IButton
         startIcon: StartIcon = "i"
     } = slots || ({} as IButtonSlots);
 
-    const { slotProps = {} } = useButton(props);
+    const { slotProps = {} } = useButton({ ...props, componentRef });
 
     return (
         <Root {...slotProps.root}>
@@ -19,4 +19,4 @@ export const ButtonBase: React.FunctionComponent<IButtonProps> = (props: IButton
             <EndIcon {...slotProps.endIcon} />
         </Root>
     );
-};
+});

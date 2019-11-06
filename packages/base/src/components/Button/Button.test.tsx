@@ -1,7 +1,6 @@
 import React from 'react';
 import { configure, mount } from 'enzyme';
 import { ButtonBase } from './Button.base';
-import { IButton } from './Button.types';
 
 // TODO: Need to move this to some global configuration.
 const Adapter = require('enzyme-adapter-react-16');
@@ -9,15 +8,15 @@ configure({ adapter: new Adapter() });
 
 describe('ButtonBase', () => {
   it('focuses correctly when focus is triggered via IButton interface', () => {
-    const button1 = React.createRef<IButton>();
-    const button2 = React.createRef<IButton>();
-    const button3 = React.createRef<IButton>();
+    const button1 = React.createRef<HTMLElement>();
+    const button2 = React.createRef<HTMLElement>();
+    const button3 = React.createRef<HTMLElement>();
 
     const wrapper = mount(
       <div>
-        <ButtonBase componentRef={button1}>Button 1</ButtonBase>
-        <ButtonBase componentRef={button2}>Button 2</ButtonBase>
-        <ButtonBase componentRef={button3}>Button 3</ButtonBase>
+        <ButtonBase ref={button1}>Button 1</ButtonBase>
+        <ButtonBase ref={button2}>Button 2</ButtonBase>
+        <ButtonBase ref={button3}>Button 3</ButtonBase>
       </div>
     );
 
