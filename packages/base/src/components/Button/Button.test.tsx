@@ -1,10 +1,6 @@
 import React from 'react';
-import { configure, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { ButtonBase } from './Button.base';
-
-// TODO: Need to move this to some global configuration.
-const Adapter = require('enzyme-adapter-react-16');
-configure({ adapter: new Adapter() });
 
 describe('ButtonBase', () => {
   it('focuses correctly when focus is triggered via IButton interface', () => {
