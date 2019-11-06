@@ -86,6 +86,7 @@ const styles = (t: IResolvedTokens<ISliderTokens>) => ({
     boxSizing: "border-box",
     width: t.size,
     height: t.size,
+    outline: "none",
 
     "$rootVertical &": {
       transform: "translateY(50%)"
@@ -104,6 +105,16 @@ const styles = (t: IResolvedTokens<ISliderTokens>) => ({
       borderWidth: t.thumbBorderWidth,
       borderStyle: "solid",
       borderColor: t.thumbBorderColor
+    },
+
+    "&:focus": {
+      borderRadius: 2,
+      border: "1px solid black"
+    },
+
+    "$root:active &:after": {
+      width: t.thumbSizePressed,
+      height: t.thumbSizePressed
     },
 
     "$rootDisabled &:after": {

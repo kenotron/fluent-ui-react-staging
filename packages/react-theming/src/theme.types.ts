@@ -17,8 +17,8 @@ export type ITokenLiteral = string | number | ICastableToString;
 
 /** @public */
 export interface ITokenResolver {
-  dependsOn: string[];
-  resolve: (arg: ITokenLiteral[], theme: ITheme) => ITokenLiteral;
+  dependsOn: string | string[];
+  resolve?: (arg: ITokenLiteral[], theme: ITheme) => ITokenLiteral;
 }
 
 /** @public */
@@ -33,13 +33,18 @@ export type IResolvedTokens<TTokens> = {
 };
 
 type IComponentOverrides = {
-  tokens?: { [token: string]: IToken };
+  tokens?: any;
+  styles?: any;
   slots?: any;
 };
+
 type IComponentOverrideGroup = { [componentName: string]: IComponentOverrides };
 
 export type IThemeColorDefinition = {
   background: IColor;
+  bodyText: IColor;
+  subText: IColor;
+  disabledText: IColor;
 
   brand: IColorRamp;
   accent: IColorRamp;
@@ -92,4 +97,20 @@ export interface ITheme {
   icons: {};
 
   components: IComponentOverrideGroup;
+
+  schemes: {
+    [key: string]: ITheme;
+  };
 }
+
+export type DeepPartial<T> = {
+  [key in keyof T]?: {
+    [key2 in keyof T[key]]?: T[key][key2];
+  };
+};
+
+export type IPartialTheme = DeepPartial<Omit<ITheme, "schemes">> & {
+  schemes?: {
+    [key: string]: IPartialTheme;
+  };
+};

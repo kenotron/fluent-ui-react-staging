@@ -2,7 +2,6 @@ import { useTheme } from "./themeContext";
 import { resolveTokens } from "./resolveTokens";
 import jss from "jss";
 import { ITheme } from "./theme.types";
-
 type Options = any;
 type SlotsAssignment = any;
 
@@ -120,8 +119,12 @@ const _getClasses = (
     let styles: any = {};
 
     optionsSet.forEach((options: any) => {
-      if (options && options.styles && typeof options.styles === "function") {
-        styles = { ...styles, ...options.styles(tokens) };
+      if (options && options.styles) {
+        if (typeof options.styles === "function") {
+          styles = { ...styles, ...options.styles(tokens) };
+        } else {
+          styles = { ...styles, ...options.styles };
+        }
       }
     });
 
@@ -129,6 +132,7 @@ const _getClasses = (
     const sheet = jss.createStyleSheet(styles, {
       classNamePrefix: name + "-"
     });
+    sheet.update(theme);
     sheet.attach();
 
     classes = sheet.classes;

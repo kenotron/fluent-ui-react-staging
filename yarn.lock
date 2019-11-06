@@ -3136,6 +3136,16 @@
   dependencies:
     tslib "^1.7.1"
 
+"@uifabric/utilities@^7.5.0":
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-7.5.0.tgz#9e7eb2c73595bd105620eea507aeb1bafaba8f14"
+  integrity sha512-h9XwZVaKyLN3Ss4G+bXFWsmCzExID/SKbO64XPjsCIhuxVYsTg6/hDrvyU4TCEx06/ehXfdHRmyjCYL1PNdDMg==
+  dependencies:
+    "@uifabric/merge-styles" "^7.7.0"
+    "@uifabric/set-version" "^7.0.2"
+    prop-types "^15.5.10"
+    tslib "^1.7.1"
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
