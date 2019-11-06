@@ -1,9 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Adding ThemeProvider, adjusting compose to support theme functions in styling, adding scheme support.",
-  "packageName": "@fluentui/react-theming",
-  "email": "dzearing@microsoft.com",
-  "commit": "26c730cd5b123b463828e5fc9cd95e451a3fba0f",
-  "date": "2019-11-06T18:06:28.437Z",
-  "file": "/Users/david/git/fluent-ui/change/@fluentui-react-theming-2019-11-06-10-06-52-theming.json"
-}

@@ -2,6 +2,20 @@
   "name": "@fluentui/react",
   "entries": [
     {
+      "date": "Wed, 06 Nov 2019 18:35:34 GMT",
+      "tag": "@fluentui/react_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Adding example Teams theme to slider story; temporarily. It will move out to a more official place separately.",
+            "author": "dzearing@microsoft.com",
+            "commit": "26c730cd5b123b463828e5fc9cd95e451a3fba0f"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 30 Oct 2019 17:20:18 GMT",
       "tag": "@fluentui/react_v0.1.0",
       "version": "0.1.0",
