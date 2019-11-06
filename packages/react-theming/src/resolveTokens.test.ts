@@ -16,7 +16,7 @@ const reifyColors = (
   partial: Partial<IThemeColorDefinition>
 ): IThemeColorDefinition => {
   const defaultRamp: IColorRamp = { values: [], index: -1 };
-  const result: IThemeColorDefinition = {
+  const result: Partial<IThemeColorDefinition> = {
     background: "#000",
     brand: defaultRamp,
     accent: defaultRamp,
@@ -26,7 +26,7 @@ const reifyColors = (
     danger: defaultRamp,
     ...partial
   };
-  return result;
+  return result as IThemeColorDefinition;
 };
 
 describe("resolveTokens", () => {
