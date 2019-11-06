@@ -1,5 +1,6 @@
 import { startStorybookTask, buildStorybookTask, storybookConfigExists } from './storybookTask';
 import {
+  option,
   task,
   series,
   parallel,
@@ -14,6 +15,8 @@ import {
 } from 'just-scripts';
 import { publishPrepareTask } from './publishPrepareTask';
 import { autoProjectRefsTask, autoProjectRefsVerifyTask } from './autoProjectRefsTask';
+
+option('port', { alias: 'p' });
 
 task('storybook:start', startStorybookTask);
 task('storybook:build', buildStorybookTask);
