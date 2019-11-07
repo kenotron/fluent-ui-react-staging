@@ -23,12 +23,14 @@
   "scripts": {
     "build": "just-scripts build",
     "clean": "just-scripts clean",
+    "e2e": "just-scripts e2e",
+    "e2e:watch": "just-scripts e2e:watch",
     "just": "just-scripts",
     "lint": "just-scripts lint",
     "start": "just-scripts storybook:start",
+    "start-test": "just-scripts test:watch",
     "test": "just-scripts test",
-    "update-snapshots": "just-scripts jest:snapshots",
-    "start-test": "just-scripts test:watch"
+    "update-snapshots": "just-scripts jest:snapshots"
   },
   "dependencies": {
     "@fluentui/base": "^0.2.0",
@@ -37,7 +39,9 @@
   },
   "devDependencies": {
     "@fluentui/scripts": "1.0.2",
+    "@types/expect-puppeteer": "2.2.1",
     "@types/jest": "^24.0.19",
+    "@types/jest-environment-puppeteer": "2.2.0",
     "@types/node": "^12.11.1",
     "@types/react": "^16.9.2",
     "@types/storybook__react": "^4.0.2"

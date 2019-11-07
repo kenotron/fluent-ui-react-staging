@@ -15,11 +15,16 @@ import {
 } from 'just-scripts';
 import { publishPrepareTask } from './publishPrepareTask';
 import { autoProjectRefsTask, autoProjectRefsVerifyTask } from './autoProjectRefsTask';
+import { e2eTask, e2eWatchTask } from './e2eTask';
+import { httpServerTask } from './httpServerTask';
+import path from 'path';
 
 option('port', { alias: 'p' });
+option('quiet', { alias: 'q' });
+option('ci', { default: process.env.TF_BUILD || process.env.CI });
 
-task('storybook:start', startStorybookTask);
-task('storybook:build', buildStorybookTask);
+task('storybook:start', startStorybookTask());
+task('storybook:build', buildStorybookTask());
 
 task('webpack', webpackTask());
 task('ts', tscTask({ build: 'tsconfig.json' }));
@@ -55,6 +60,27 @@ task('build', parallel('ts', condition('storybook:build', storybookConfigExists)
 task('bundle', series('webpack'));
 task('test', series('jest'));
 task('test:watch', series('jest:watch'));
+
+task(
+  'e2e:server',
+  httpServerTask({
+    port: 3456,
+    root: path.join(process.cwd(), 'dist')
+  })
+);
+
+task('e2e', e2eTask);
+
+task(
+  'e2e:watch',
+  series(
+    startStorybookTask({
+      port: 3456
+    }),
+    e2eWatchTask
+  )
+);
+
 task('lint', series('eslint'));
 task('start', series('storybook:start'));
 
