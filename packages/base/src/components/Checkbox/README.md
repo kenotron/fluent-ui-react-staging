@@ -10,7 +10,8 @@ The `Checkbox` component allows a user to choose between two mutually exclusive 
 
 ## Reference implementations
 
-https://codesandbox.io/s/checkboxes-dk4pz
+https://codesandbox.io/s/checkboxes-ggpx1
+
 Note about the Stardust example: there's some weirdness with how the theme providers are interacting with each other, the Stardust checkbox's styling is messing up as a result.
 
 Fabric Checkbox [docs](https://developer.microsoft.com/en-us/fabric#/controls/web/Checkbox)
@@ -52,13 +53,11 @@ FastDNA Checkbox [docs](https://github.com/microsoft/fast-dna/tree/master/packag
 | ariaLabelledBy       | string                                                      |                                                                       
 | onChange             | (ev: Event, value: number) => void                          |
 | label                | string                                                      |
-| theme                | ITheme                                                      |
-| styles               | ICheckboxStyles                                             |
-| rtl                  | boolean                                                     |
 | vertical             | boolean                                                     |
 
-To be discussed:
+Note: rtl, styles, and theme come from compose or the ThemeProvider. 
 
+Removing the following two props because the ARIA spec dictates role='checkbox' doesn't need aria-posinset and aria-setsize. These are only valid for role='option' which is only in the case the checkbox is a part of a listbox, which is not something we need to account for in the base component API. If the user does need to provide these two props, slotProps could be used to apply additional props to any slot.
 | Name                                  | Concern                                                           |
 | ------------------------------------- | ------------------------------------------------------------------|
 | ariaPositionInset                     | if checkbox is in a set, should be up to the user to provide a11y |             
@@ -153,8 +152,7 @@ General considerations:
 Only use as toggle between two mutually exclusive options (binary) or in a group with shared context to offer multiple options.
 
 Uncontrolled vs. controlled
-
-Indeterminate state? Subcheckboxes are not checked -> don't check parent checkbox
+Indeterminate state? When children checkboxes aren't checked, don't check parent checkbox.
 Variant color & size?
 Invalid state/error state?
 
