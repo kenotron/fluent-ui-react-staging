@@ -15,6 +15,8 @@ export { mergeSlotProps } from "./utilities/mergeSlotProps";
 import { IStandardProps as P } from "./utilities/mergeSlotProps";
 export type IStandardProps = P;
 export { compose } from "./compose";
+export { generateClassNames } from "./jss";
+export { resolveTokens } from "./resolveTokens";
 export { ThemeContext } from "./themeContext";
 export { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 export { Box } from "./components/Box/Box";

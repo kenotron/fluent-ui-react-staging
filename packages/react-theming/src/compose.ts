@@ -102,7 +102,7 @@ export const _composeFactory = (useThemeHook: any = useTheme) => {
  */
 export const compose = _composeFactory();
 
-const _getClasses = (
+export const _getClasses = (
   name: string,
   theme: ITheme,
   classNamesCache: WeakMap<any, any>,

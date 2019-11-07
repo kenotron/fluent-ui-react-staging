@@ -106,7 +106,6 @@ export const resolveTokens = (
       );
     }
   });
-
   if (
     theme.components[componentName] &&
     theme.components[componentName].tokens
@@ -149,6 +148,5 @@ export const resolveTokens = (
   for (let tokenName in tokens) {
     result[tokenName] = tokens[tokenName].value;
   }
-
   return result;
 };
