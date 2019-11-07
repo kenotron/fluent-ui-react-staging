@@ -17,7 +17,15 @@ interface PackageInfo {
   packageJson: PackageJson;
 }
 
-export function getAllPackageInfo() {
+type AllPackageInfo = { [key: string]: PackageInfo };
+
+let packageInfoCache: AllPackageInfo = null;
+
+export function getAllPackageInfo(): AllPackageInfo {
+  if (packageInfoCache) {
+    return packageInfoCache;
+  }
+
   const gitRoot = findGitRoot();
   const results = spawnSync('git', ['ls-tree', '-r', '--name-only', '--full-tree', 'HEAD']);
   const packageInfo: { [key: string]: PackageInfo } = {};
@@ -39,6 +47,8 @@ export function getAllPackageInfo() {
         };
       }
     });
+
+  packageInfoCache = packageInfo;
 
   return packageInfo;
 }

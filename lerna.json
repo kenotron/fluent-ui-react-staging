@@ -1,5 +1,5 @@
 {
   "npmClient": "yarn",
-  "packages": ["packages/*", "scripts"],
+  "packages": ["packages/*", "packages/stardust-ui/*", "scripts"],
   "version": "0.0.0"
 }

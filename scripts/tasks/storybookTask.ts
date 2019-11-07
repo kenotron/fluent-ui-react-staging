@@ -1,13 +1,26 @@
 import { resolveCwd } from 'just-scripts';
+import path from 'path';
 
 export function storybookConfigExists() {
-  return !!resolveCwd('.storybook/config.js');
+  return !!resolveCwd('./.storybook/config.js');
 }
 
-export function startStorybookTask() {
-  require('@storybook/react/bin/index');
+export async function startStorybookTask() {
+  const storybook = require('@storybook/react/standalone');
+  await storybook({
+    mode: 'dev',
+    staticDir: [path.join(process.cwd(), 'static')],
+    configDir: path.join(process.cwd(), '.storybook')
+  });
 }
 
-export function buildStorybookTask() {
-  require('@storybook/react/bin/build');
+export async function buildStorybookTask() {
+  const storybook = require('@storybook/react/standalone');
+  await storybook({
+    mode: 'static',
+    staticDir: [path.join(process.cwd(), 'static')],
+    configDir: path.join(process.cwd(), '.storybook'),
+    outputDir: path.join(process.cwd(), 'dist'),
+    quiet: true
+  });
 }

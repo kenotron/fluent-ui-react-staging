@@ -1,0 +1,11 @@
+{
+  "extends": "@fluentui/scripts/config/typescript/tsconfig.stardust-ui.json",
+  "compilerOptions": {
+    "paths": {
+      "docs/*": ["docs/*"],
+      "src/*": ["packages/react/src/*"],
+      "test/*": ["packages/react/test/*"]
+    }
+  },
+  "include": ["**/*"]
+}

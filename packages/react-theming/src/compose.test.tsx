@@ -5,7 +5,7 @@ import { ITheme } from "./theme.types";
 const compose = _composeFactory(() => makeBlankTheme());
 
 const reifyTheme = (partial: Partial<ITheme>): ITheme => {
-  const result = { ...partial };
+  const result = { components: {}, ...partial };
 
   return result as ITheme;
 };
@@ -181,8 +181,10 @@ describe("compose", () => {
       const theme: ITheme = reifyTheme({
         components: {
           Mock: {
-            foo: "foo-from-theme",
-            bar: "bar-from-theme"
+            slots: {
+              foo: "foo-from-theme",
+              bar: "bar-from-theme"
+            }
           }
         }
       });

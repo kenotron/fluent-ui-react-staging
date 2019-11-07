@@ -5,7 +5,8 @@ module.exports = {
   rules: {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
-    'no-unused-vars': 'off'
+    'no-unused-vars': 'off',
+    'no-undef': 'off'
   },
   parserOptions: {
     ecmaVersion: 2017,

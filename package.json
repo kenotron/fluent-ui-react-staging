@@ -4,6 +4,7 @@
   "workspaces": {
     "packages": [
       "packages/*",
+      "packages/stardust-ui/*",
       "scripts"
     ]
   },
@@ -14,8 +15,10 @@
     "lint": "lerna run lint --stream",
     "update-snapshots": "lerna run update-snapshots --stream",
     "start": "yarn workspace @fluentui/react start",
+    "start:sd": "yarn workspace @stardust-ui/react-docs start",
     "change": "beachball",
     "checkchange": "beachball check",
+    "projrefs": "yarn workspace @fluentui/scripts projrefs",
     "pub": "beachball publish"
   },
   "devDependencies": {

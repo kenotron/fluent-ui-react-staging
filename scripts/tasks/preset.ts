@@ -13,6 +13,7 @@ import {
   cleanTask
 } from 'just-scripts';
 import { publishPrepareTask } from './publishPrepareTask';
+import { autoProjectRefsTask, autoProjectRefsVerifyTask } from './autoProjectRefsTask';
 
 task('storybook:start', startStorybookTask);
 task('storybook:build', buildStorybookTask);
@@ -53,3 +54,6 @@ task('test', series('jest'));
 task('test:watch', series('jest:watch'));
 task('lint', series('eslint'));
 task('start', series('storybook:start'));
+
+task('projrefs', autoProjectRefsTask);
+task('projrefs:verify', autoProjectRefsVerifyTask);

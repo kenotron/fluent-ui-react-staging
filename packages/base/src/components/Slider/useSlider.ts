@@ -108,8 +108,6 @@ const useSliderState = (userProps: ISliderProps): ISliderState => {
       }
     },
     [
-      _getDragValues,
-      dragging,
       dragState,
       min,
       max,
@@ -133,7 +131,7 @@ const useSliderState = (userProps: ISliderProps): ISliderState => {
 
       _updateValue(ev, drag.value);
     },
-    [onMouseMove, setDragging, dragState, setDragState, rootRef, vertical]
+    [_updateValue, max, min, snapToStep, step, setDragging, setDragState, rootRef, vertical]
   );
 
   const onMouseUp = React.useCallback(

@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "references": [
+    {
+      "path": "../base/tsconfig.json"
+    },
+    {
+      "path": "../react/tsconfig.json"
+    },
+    {
+      "path": "../react-theming/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/accessibility/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-bindings/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-component-event-listener/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-component-nesting-registry/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-component-ref/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-docs/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/react-proptypes/tsconfig.json"
+    },
+    {
+      "path": "../stardust-ui/state/tsconfig.json"
+    }
+  ]
+}
