@@ -1,6 +1,6 @@
 {
   "name": "@fluentui/base",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "description": "> TODO: description",
   "homepage": "https://github.com/microsoft/fluent-ui#readme",
   "bugs": {
@@ -36,7 +36,7 @@
     "react": "^16.9.0"
   },
   "devDependencies": {
-    "@fluentui/scripts": "1.0.1",
+    "@fluentui/scripts": "1.0.2",
     "@types/jest": "^24.0.19",
     "@types/node": "^12.11.1",
     "@types/react": "^16.9.2",

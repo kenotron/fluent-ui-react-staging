@@ -5,6 +5,9 @@ trigger: [master]
 pool:
   vmImage: 'Ubuntu 16.04'
 
+variables:
+  - group: fluent-secrets
+
 steps:
   - task: NodeTool@0
     inputs:
@@ -30,6 +33,24 @@ steps:
   - script: |
       yarn checkchange
     displayName: yarn check for change files
+
+  - task: AzureUpload@1
+    displayName: 'Upload to Azure'
+    inputs:
+      SourcePath: 'packages/pr-deploy-site/dist'
+      azureSubscription: 'UI Fabric'
+      storage: 'fluentui'
+      ContainerName: '$web'
+      BlobPrefix: 'pr-deploy-site/$(Build.SourceBranch)'
+
+  - task: GithubPRStatus@0
+    displayName: 'Update Github Pull Request Status'
+    inputs:
+      githubOwner: microsoft
+      githubRepo: 'fluent-ui-react-staging'
+      githubContext: 'Pull Request Deployed Site'
+      githubDescription: 'Click "Details" to go to the Deployed Site'
+      githubTargetLink: 'https://fluentui.z5.web.core.windows.net/pr-deploy-site/$(Build.SourceBranch)/'
 
   - script: |
       yarn workspace @fluentui/scripts just projrefs:verify

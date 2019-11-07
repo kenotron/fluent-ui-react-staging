@@ -1,7 +1,11 @@
 {
   "typescript.tsdk": "./node_modules/typescript/lib",
   "eslint.packageManager": "yarn",
-  "eslint.validate": [{ "language": "typescript", "autoFix": false }, { "language": "typescriptreact", "autoFix": false }],
+  "eslint.validate": [
+    { "language": "typescript", "autoFix": false },
+    { "language": "typescriptreact", "autoFix": false }
+  ],
   "eslint.enable": true,
-  "eslint.lintTask.options": "-c .eslintrc.js --ignore-path ${workspaceFolder}.eslintignore ."
+  "eslint.lintTask.options": "-c .eslintrc.js --ignore-path ${workspaceFolder}.eslintignore .",
+  "jest.pathToJest": "./node_modules/.bin/jest"
 }

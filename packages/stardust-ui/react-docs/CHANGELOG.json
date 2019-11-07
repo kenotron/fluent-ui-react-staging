@@ -1,0 +1,19 @@
+{
+  "name": "@stardust-ui/react-docs",
+  "entries": [
+    {
+      "date": "Wed, 30 Oct 2019 17:54:03 GMT",
+      "tag": "@stardust-ui/react-docs_v0.40.2",
+      "version": "0.40.2",
+      "comments": {
+        "patch": [
+          {
+            "comment": "added config bits to handle examples that are class based",
+            "author": "kchau@microsoft.com",
+            "commit": "88f5ffb9ada8f00fb528ace37e6597089a0dab7e"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -18,6 +18,7 @@ export interface ISliderTokens {
   thumbColorHovered: IToken;
   thumbColorPressed: IToken;
   thumbSize: IToken;
+  thumbSizePressed: IToken;
   trackBorderRadius: IToken;
   trackColor: IToken;
   trackColorDisabled: IToken;
@@ -32,7 +33,7 @@ const SliderTokens = {
   railColor: "rgb(200, 198, 196)",
   railColorDisabled: "rgb(243, 242, 241)",
   railColorHovered: "rgb(222, 236, 249)",
-  railColorPressed: "rgb(222, 236, 249)",
+  railColorPressed: { dependsOn: "railColorHovered" },
   railSize: 4,
   thumbBorderColor: "rgb(96, 94, 92)",
   thumbBorderColorHovered: "rgb(0, 90, 158)",
@@ -45,11 +46,12 @@ const SliderTokens = {
   thumbColorHovered: "#FFF",
   thumbColorPressed: "#FFF",
   thumbSize: 16,
+  thumbSizePressed: { dependsOn: "thumbSize" },
   trackBorderRadius: 4,
   trackColor: "rgb(96, 94, 92)",
   trackColorDisabled: "rgb(161, 159, 157)",
   trackColorHovered: "rgb(0, 120, 212)",
-  trackColorPressed: "rgb(0, 120, 212)",
+  trackColorPressed: { dependsOn: "trackColorHovered" },
   trackSize: 4
 };
 

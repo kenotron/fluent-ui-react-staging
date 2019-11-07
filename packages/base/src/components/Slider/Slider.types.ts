@@ -1,3 +1,5 @@
+import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/ISlots";
+
 export interface ISliderSlots {
   /** Intended to contain the slider */
   root: React.ReactType;
@@ -9,28 +11,15 @@ export interface ISliderSlots {
   thumb: React.ReactType;
 }
 
-export interface ISliderSlotProps {
-  /** Intended to contain the slider */
-  root: {};
-  /** Intended to provide a track space for the thumb to slide on */
-  rail: {};
-  /** Intended to provide a selected track section from left to thumb. */
-  track: {};
-  /** Intended to be a child of the track, where left represents a percentage */
-  thumb: {};
-}
+export type ISliderSlotProps = ISlotProps<ISliderSlots>;
 
-export interface ISliderClasses {
+export interface ISliderClasses extends IClasses<ISliderSlots> {
   rootFocused: string;
   rootVertical: string;
   rootDisabled: string;
-  root: string;
-  rail: string;
-  track: string;
-  thumb: string;
 }
 
-export interface ISliderProps {
+export interface ISliderProps extends ISlottableProps<ISliderSlotProps, ISliderClasses> {
   /** Sets the disabled flag, causing the control to be inactive. */
   disabled?: boolean;
 
@@ -57,12 +46,4 @@ export interface ISliderProps {
 
   /** on change handler (controlled) */
   onChange?: (ev: MouseEvent | KeyboardEvent, value: number) => void;
-
-  /** slots */
-  slots?: ISliderSlotProps;
-
-  /** slot props */
-  slotProps?: Partial<ISliderSlotProps>;
-
-  classes?: Partial<ISliderClasses>;
 }
