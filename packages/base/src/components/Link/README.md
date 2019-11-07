@@ -291,6 +291,7 @@ From the recommended DOM above we can indicate which slots are going to be requi
 
 Aria spec:
 https://www.w3.org/TR/wai-aria-1.1/#link
+https://www.w3.org/TR/wai-aria-practices/#link
 
 Fluent UI HIG:
 https://microsoft.sharepoint-df.com/:w:/r/teams/OPGUXLeads/_layouts/15/Doc.aspx?sourcedoc=%7BE585806E-01BF-4F37-BF59-12708E4CE81D%7D&file=Links.docx&action=default&mobileredirect=true
