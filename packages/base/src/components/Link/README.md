@@ -13,7 +13,6 @@ The `Link` component is a clickable control primarily used for navigation, provi
 - Review with design crew.
 - Check into repo where code will live.
 
-
 ## Related variant considerations
 
 The following section documents variants of the component that currently exist in Fabric and identifies variants that exist in other component libraries but don't currently exist in Fabric, documenting which component libraries have those variants.
