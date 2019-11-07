@@ -2,6 +2,20 @@
   "name": "@fluentui/scripts",
   "entries": [
     {
+      "date": "Thu, 07 Nov 2019 21:42:52 GMT",
+      "tag": "@fluentui/scripts_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "adds scenario tests via jest-puppeteer",
+            "author": "kchau@microsoft.com",
+            "commit": "4b1bee49b05777a13b8dc0432feb4c23123f32d9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 05 Nov 2019 23:42:53 GMT",
       "tag": "@fluentui/scripts_v1.0.2",
       "version": "1.0.2",

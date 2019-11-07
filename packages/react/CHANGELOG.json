@@ -2,6 +2,20 @@
   "name": "@fluentui/react",
   "entries": [
     {
+      "date": "Thu, 07 Nov 2019 21:42:52 GMT",
+      "tag": "@fluentui/react_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "none": [
+          {
+            "comment": "adds scenario tests via jest-puppeteer",
+            "author": "kchau@microsoft.com",
+            "commit": "4b1bee49b05777a13b8dc0432feb4c23123f32d9"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 06 Nov 2019 18:35:34 GMT",
       "tag": "@fluentui/react_v0.1.1",
       "version": "0.1.1",

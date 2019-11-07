@@ -1,9 +1,0 @@
-{
-  "type": "none",
-  "comment": "adds scenario tests via jest-puppeteer",
-  "packageName": "@fluentui/react",
-  "email": "kchau@microsoft.com",
-  "commit": "4b1bee49b05777a13b8dc0432feb4c23123f32d9",
-  "date": "2019-11-07T21:25:10.310Z",
-  "file": "/Users/ken/workspace/fluent/change/@fluentui-react-2019-11-07-13-25-13-scenario.json"
-}
