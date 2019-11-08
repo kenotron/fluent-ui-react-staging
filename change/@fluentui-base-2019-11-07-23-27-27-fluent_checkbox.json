@@ -1,8 +1,8 @@
 {
   "type": "patch",
-  "comment": "Merge branch 'master' into fluent_checkbox",
+  "comment": "Checkbox: Adding README spec to base components.",
   "packageName": "@fluentui/base",
-  "email": "email not defined",
+  "email": "aneeshak@microsoft.com",
   "commit": "72e9ee5b0f189e4bb460c65c6125f7cffcda86c0",
   "date": "2019-11-08T05:27:27.049Z",
   "file": "/Users/aneeshak/fluent-ui/change/@fluentui-base-2019-11-07-23-27-27-fluent_checkbox.json"
