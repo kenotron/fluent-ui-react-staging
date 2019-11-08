@@ -1,9 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Button and Link: Adding imperative focus behavior and tests to prototypes.",
-  "packageName": "@fluentui/base",
-  "email": "Humberto.Morimoto@microsoft.com",
-  "commit": "c1584e272ae528009ad9f176b7cf8ddefbf9c2b5",
-  "date": "2019-11-02T00:28:36.376Z",
-  "file": "D:\\fluent-ui\\change\\@fluentui-base-2019-11-01-17-28-36-buttonImperativeInterface.json"
-}

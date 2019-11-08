@@ -2,6 +2,20 @@
   "name": "@fluentui/scripts",
   "entries": [
     {
+      "date": "Fri, 08 Nov 2019 19:50:31 GMT",
+      "tag": "@fluentui/scripts_v1.1.1",
+      "version": "1.1.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Abstracting enzyme global configuration.",
+            "author": "Humberto.Morimoto@microsoft.com",
+            "commit": "f68faf0f23959bad380b8b2d1465660c37e8de43"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 07 Nov 2019 21:42:52 GMT",
       "tag": "@fluentui/scripts_v1.1.0",
       "version": "1.1.0",

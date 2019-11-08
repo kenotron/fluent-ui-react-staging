@@ -33,12 +33,12 @@
     "update-snapshots": "just-scripts jest:snapshots"
   },
   "dependencies": {
-    "@fluentui/base": "^0.3.0",
+    "@fluentui/base": "^0.4.0",
     "@fluentui/react-theming": "^0.1.1",
     "react": "^16.9.0"
   },
   "devDependencies": {
-    "@fluentui/scripts": "1.1.0",
+    "@fluentui/scripts": "1.1.1",
     "@types/expect-puppeteer": "2.2.1",
     "@types/jest": "^24.0.19",
     "@types/jest-environment-puppeteer": "2.2.0",

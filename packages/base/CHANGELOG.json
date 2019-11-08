@@ -2,6 +2,20 @@
   "name": "@fluentui/base",
   "entries": [
     {
+      "date": "Fri, 08 Nov 2019 19:50:31 GMT",
+      "tag": "@fluentui/base_v0.4.0",
+      "version": "0.4.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Button and Link: Adding imperative focus behavior and tests to prototypes.",
+            "author": "Humberto.Morimoto@microsoft.com",
+            "commit": "c1584e272ae528009ad9f176b7cf8ddefbf9c2b5"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 06 Nov 2019 21:01:40 GMT",
       "tag": "@fluentui/base_v0.3.0",
       "version": "0.3.0",
