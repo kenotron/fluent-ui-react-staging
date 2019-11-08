@@ -47,13 +47,10 @@ class FlamegrillReporter {
       const tempDir = path.join(root, 'dist/flamegrill/tmp');
       await fs.mkdirp(outDir);
       await fs.mkdirp(tempDir);
-
-      const processed = await processProfiles(profiles, {
+      await processProfiles(profiles, {
         outDir,
         tempDir
       });
-
-      console.log(processed);
     })();
   }
 }
