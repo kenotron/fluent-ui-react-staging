@@ -1,0 +1,42 @@
+pr: none
+
+trigger:
+  - master
+
+variables:
+  - group: 'Github and NPM secrets'
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      yarn
+    displayName: yarn
+
+  - script: |
+      yarn build
+    displayName: yarn build
+
+  - script: |
+      yarn test
+    displayName: yarn test
+
+  - script: |
+      yarn workspace @fluentui/scripts just publish:prepare
+    displayName: prepare all package.json to be published
+
+  - script: |
+      git config user.name "UI Fabric Build"
+      git config user.email "fabrictactical@service.microsoft.com"
+      git remote set-url origin https://$(githubUser):$(githubPAT)@github.com/microsoft/fluent-ui-react-staging.git
+    displayName: Authenticate git for pushes
+
+  - script: |
+      yarn pub --no-publish -y
+    displayName: bump and publish

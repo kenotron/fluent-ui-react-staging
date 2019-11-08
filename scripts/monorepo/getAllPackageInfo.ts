@@ -2,10 +2,33 @@ import { spawnSync } from 'child_process';
 import path from 'path';
 import { findGitRoot } from './findGitRoot';
 
-export function getAllPackageInfo() {
+interface PackageJson {
+  name: string;
+  version: string;
+  main: string;
+  types?: string;
+  module?: string;
+  dependencies?: { [key: string]: string };
+  devDependencies?: { [key: string]: string };
+}
+
+interface PackageInfo {
+  packagePath: string;
+  packageJson: PackageJson;
+}
+
+type AllPackageInfo = { [key: string]: PackageInfo };
+
+let packageInfoCache: AllPackageInfo = null;
+
+export function getAllPackageInfo(): AllPackageInfo {
+  if (packageInfoCache) {
+    return packageInfoCache;
+  }
+
   const gitRoot = findGitRoot();
   const results = spawnSync('git', ['ls-tree', '-r', '--name-only', '--full-tree', 'HEAD']);
-  const packageInfo: any = {};
+  const packageInfo: { [key: string]: PackageInfo } = {};
 
   results.stdout
     .toString()
@@ -24,6 +47,8 @@ export function getAllPackageInfo() {
         };
       }
     });
+
+  packageInfoCache = packageInfo;
 
   return packageInfo;
 }

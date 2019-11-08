@@ -1,0 +1,69 @@
+{
+  "name": "@fluentui/scripts",
+  "entries": [
+    {
+      "date": "Thu, 07 Nov 2019 21:42:52 GMT",
+      "tag": "@fluentui/scripts_v1.1.0",
+      "version": "1.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "adds scenario tests via jest-puppeteer",
+            "author": "kchau@microsoft.com",
+            "commit": "4b1bee49b05777a13b8dc0432feb4c23123f32d9"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 05 Nov 2019 23:42:53 GMT",
+      "tag": "@fluentui/scripts_v1.0.2",
+      "version": "1.0.2",
+      "comments": {
+        "none": [
+          {
+            "comment": "added jest tests for all stardust-ui packages except for the main react package",
+            "author": "kchau@microsoft.com",
+            "commit": "b92cc879cee1c8baccefe2656076d1599dca844d"
+          },
+          {
+            "comment": "adding jest tests back to stardust, but not doing real conformance test yet",
+            "author": "kchau@microsoft.com",
+            "commit": "433f6ce7343c2462c2a223cb5e1cf0eb5262f795"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "upgrading to the full TS 3.7 experience",
+            "author": "kchau@microsoft.com",
+            "commit": "becd7a52d4e31694de38ac602cee6246dc550cec"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 25 Oct 2019 19:36:25 GMT",
+      "tag": "@fluentui/scripts_v1.0.1",
+      "version": "1.0.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Adds beachball integration",
+            "author": "kchau@microsoft.com",
+            "commit": "72fd895d2eef3ae4890410f9d475976bea58b3a1"
+          },
+          {
+            "comment": "Gets rid of webpack resolve alias tools",
+            "author": "kchau@microsoft.com",
+            "commit": "90ec1264e955cf2e1d70e9da79dc4481ca42e875"
+          },
+          {
+            "comment": "adds release pipeline",
+            "author": "kchau@microsoft.com",
+            "commit": "21defe73dabd2f697de553d8b98fafd9ec8fbd6e"
+          }
+        ]
+      }
+    }
+  ]
+}

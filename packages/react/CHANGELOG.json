@@ -1,0 +1,61 @@
+{
+  "name": "@fluentui/react",
+  "entries": [
+    {
+      "date": "Thu, 07 Nov 2019 21:42:52 GMT",
+      "tag": "@fluentui/react_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "none": [
+          {
+            "comment": "adds scenario tests via jest-puppeteer",
+            "author": "kchau@microsoft.com",
+            "commit": "4b1bee49b05777a13b8dc0432feb4c23123f32d9"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 06 Nov 2019 18:35:34 GMT",
+      "tag": "@fluentui/react_v0.1.1",
+      "version": "0.1.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Adding example Teams theme to slider story; temporarily. It will move out to a more official place separately.",
+            "author": "dzearing@microsoft.com",
+            "commit": "26c730cd5b123b463828e5fc9cd95e451a3fba0f"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Oct 2019 17:20:18 GMT",
+      "tag": "@fluentui/react_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Tokens from theme",
+            "author": "jdh@microsoft.com",
+            "commit": "b7d68b1fd4d2baf4b9ddee520e3de678baedfe4e"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 25 Oct 2019 19:36:25 GMT",
+      "tag": "@fluentui/react_v0.0.1",
+      "version": "0.0.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Gets rid of webpack resolve alias tools",
+            "author": "kchau@microsoft.com",
+            "commit": "90ec1264e955cf2e1d70e9da79dc4481ca42e875"
+          }
+        ]
+      }
+    }
+  ]
+}

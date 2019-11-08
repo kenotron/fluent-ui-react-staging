@@ -1,0 +1,25 @@
+{
+  "name": "@stardust-ui/state",
+  "description": "A set of utils to create framework agnostic and reusable state managers",
+  "version": "0.40.0",
+  "author": "Oleksandr Fediashov <a@fedyashov.com>",
+  "bugs": "https://github.com/stardust-ui/react/issues",
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@fluentui/scripts": "1.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/stardust-ui/react/tree/master/packages/state",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "stardust-ui/react.git",
+  "scripts": {
+    "build": "just-scripts build"
+  },
+  "sideEffects": false
+}

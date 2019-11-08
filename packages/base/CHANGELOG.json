@@ -1,0 +1,61 @@
+{
+  "name": "@fluentui/base",
+  "entries": [
+    {
+      "date": "Wed, 06 Nov 2019 21:01:40 GMT",
+      "tag": "@fluentui/base_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Checkbox: Adding base prototype.",
+            "author": "email not defined",
+            "commit": "b459ab9a2c0a092e709f2cf39ee5b32dd35ba156"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Oct 2019 23:35:42 GMT",
+      "tag": "@fluentui/base_v0.2.0",
+      "version": "0.2.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Link: Adding base prototype without theming.",
+            "author": "Humberto.Morimoto@microsoft.com",
+            "commit": "a79c62f9f9cbfd238b5a96aec40dc673d9e9ee92"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Wed, 30 Oct 2019 22:32:43 GMT",
+      "tag": "@fluentui/base_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Button: Adding base prototype without theming.",
+            "author": "Humberto.Morimoto@microsoft.com",
+            "commit": "3c0b4b82f9dba967cc926df88a54571c6fda98e6"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 25 Oct 2019 19:36:25 GMT",
+      "tag": "@fluentui/base_v0.0.1",
+      "version": "0.0.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Gets rid of webpack resolve alias tools",
+            "author": "kchau@microsoft.com",
+            "commit": "90ec1264e955cf2e1d70e9da79dc4481ca42e875"
+          }
+        ]
+      }
+    }
+  ]
+}

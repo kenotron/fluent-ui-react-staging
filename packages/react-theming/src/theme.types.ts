@@ -18,35 +18,51 @@ export type ITokenLiteral = string | number | ICastableToString;
 /** @public */
 export interface ITokenResolver {
   dependsOn: string | string[];
-  resolve: (arg: ITokenLiteral | ITokenLiteral[], theme: ITheme) => ITokenLiteral;
+  resolve?: (arg: ITokenLiteral[], theme: ITheme) => ITokenLiteral;
 }
 
 /** @public */
-export type IToken = ITokenLiteral | ((theme: ITheme) => ITokenLiteral) | ITokenResolver;
+export type IToken =
+  | ITokenLiteral
+  | ((theme: ITheme) => ITokenLiteral)
+  | ITokenResolver;
 
 /** @public */
 export type IResolvedTokens<TTokens> = {
   [key in keyof TTokens]: ITokenLiteral;
 };
 
+type IComponentOverrides = {
+  tokens?: any;
+  styles?: any;
+  slots?: any;
+};
+
+type IComponentOverrideGroup = { [componentName: string]: IComponentOverrides };
+
+export type IThemeColorDefinition = {
+  background: IColor;
+  bodyText: IColor;
+  subText: IColor;
+  disabledText: IColor;
+
+  brand: IColorRamp;
+  accent: IColorRamp;
+
+  neutral: IColorRamp;
+
+  success: IColorRamp;
+  warning: IColorRamp;
+  danger: IColorRamp;
+
+  [key: string]: IColorRamp | string;
+};
+
 /** @public */
 export interface ITheme {
-  direction: 'rtl' | 'ltr';
+  direction: "rtl" | "ltr";
 
-  colors: {
-    background: IColor;
-
-    brand: IColorRamp;
-    accent: IColorRamp;
-
-    neutral: IColorRamp;
-
-    success: IColorRamp;
-    warning: IColorRamp;
-    danger: IColorRamp;
-
-    [key: string]: IColorRamp | string;
-  };
+  colors: IThemeColorDefinition;
 
   fonts: {
     default: string;
@@ -58,7 +74,7 @@ export interface ITheme {
   fontSizes: {
     base: number;
     scale: number;
-    unit: 'px' | 'rem' | 'pt';
+    unit: "px" | "rem" | "pt";
   };
 
   animations: {
@@ -69,16 +85,32 @@ export interface ITheme {
   spacing: {
     base: number;
     scale: number;
-    unit: 'px' | 'rem';
+    unit: "px" | "rem";
   };
 
   radius: {
     base: number;
     scale: number;
-    unit: 'px' | 'rem' | '%';
+    unit: "px" | "rem" | "%";
   };
 
   icons: {};
 
-  components: {};
+  components: IComponentOverrideGroup;
+
+  schemes: {
+    [key: string]: ITheme;
+  };
 }
+
+export type DeepPartial<T> = {
+  [key in keyof T]?: {
+    [key2 in keyof T[key]]?: T[key][key2];
+  };
+};
+
+export type IPartialTheme = DeepPartial<Omit<ITheme, "schemes">> & {
+  schemes?: {
+    [key: string]: IPartialTheme;
+  };
+};

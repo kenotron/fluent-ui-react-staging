@@ -1,0 +1,32 @@
+{
+  "extends": "@fluentui/scripts/config/typescript/tsconfig.stardust-ui.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "include": ["src"],
+  "references": [
+    {
+      "path": "../accessibility/tsconfig.json"
+    },
+    {
+      "path": "../react-bindings/tsconfig.json"
+    },
+    {
+      "path": "../react-component-event-listener/tsconfig.json"
+    },
+    {
+      "path": "../react-component-nesting-registry/tsconfig.json"
+    },
+    {
+      "path": "../react-component-ref/tsconfig.json"
+    },
+    {
+      "path": "../react-proptypes/tsconfig.json"
+    },
+    {
+      "path": "../state/tsconfig.json"
+    }
+  ]
+}

@@ -1,2 +1,1 @@
-export * from './components/Slider/Slider';
-export * from './theme';
+export * from "./components/Slider/Slider";

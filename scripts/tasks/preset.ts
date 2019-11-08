@@ -1,9 +1,6 @@
+import { startStorybookTask, buildStorybookTask, storybookConfigExists } from './storybookTask';
 import {
-  startStorybookTask,
-  buildStorybookTask,
-  storybookConfigExists
-} from "./storybookTask";
-import {
+  option,
   task,
   series,
   parallel,
@@ -15,45 +12,77 @@ import {
   eslintTask,
   jestTask,
   cleanTask
-} from "just-scripts";
+} from 'just-scripts';
+import { publishPrepareTask } from './publishPrepareTask';
+import { autoProjectRefsTask, autoProjectRefsVerifyTask } from './autoProjectRefsTask';
+import { e2eTask, e2eWatchTask } from './e2eTask';
+import { httpServerTask } from './httpServerTask';
+import path from 'path';
 
-task("storybook:start", startStorybookTask);
-task("storybook:build", buildStorybookTask);
+option('port', { alias: 'p' });
+option('quiet', { alias: 'q' });
+option('ci', { default: process.env.TF_BUILD || process.env.CI });
 
-task("webpack", webpackTask());
-task("ts", tscTask({ build: "tsconfig.json" }));
-task("eslint", eslintTask());
-task("jest", jestTask());
-task("jest:snapshots", jestTask({ updateSnapshot: true }));
-task("jest:watch", jestTask({ watch: true }));
+task('storybook:start', startStorybookTask());
+task('storybook:build', buildStorybookTask());
+
+task('webpack', webpackTask());
+task('ts', tscTask({ build: 'tsconfig.json' }));
+task('eslint', eslintTask());
+task('jest', jestTask());
+task('jest:snapshots', jestTask({ updateSnapshot: true }));
+task('jest:watch', jestTask({ watch: true }));
 
 task(
-  "api-extractor:verify",
+  'api-extractor:verify',
   apiExtractorVerifyTask({
     fixNewlines: true
   })
 );
 
 task(
-  "api-extractor:update",
+  'api-extractor:update',
   apiExtractorUpdateTask({
     fixNewlines: true
   })
 );
 
 task(
-  "clean",
+  'clean',
   cleanTask({
-    paths: ["lib", "dist", "tsconfig.tsbuildinfo"]
+    paths: ['lib', 'dist', 'tsconfig.tsbuildinfo']
   })
 );
 
+task('publish:prepare', publishPrepareTask);
+
+task('build', parallel('ts', condition('storybook:build', storybookConfigExists)));
+task('bundle', series('webpack'));
+task('test', series('jest'));
+task('test:watch', series('jest:watch'));
+
 task(
-  "build",
-  parallel("ts", condition("storybook:build", storybookConfigExists))
+  'e2e:server',
+  httpServerTask({
+    port: 3456,
+    root: path.join(process.cwd(), 'dist')
+  })
 );
-task("bundle", series("webpack"));
-task("test", series("jest"));
-task("test:watch", series("jest:watch"));
-task("lint", series("eslint"));
-task("start", series("storybook:start"));
+
+task('e2e', e2eTask);
+
+task(
+  'e2e:watch',
+  series(
+    startStorybookTask({
+      port: 3456
+    }),
+    e2eWatchTask
+  )
+);
+
+task('lint', series('eslint'));
+task('start', series('storybook:start'));
+
+task('projrefs', autoProjectRefsTask);
+task('projrefs:verify', autoProjectRefsVerifyTask);
