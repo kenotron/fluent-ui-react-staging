@@ -31,8 +31,6 @@ class FlamegrillReporter {
     // there are just unused log files that get generated, we will shift by the "delta"
     const delta = numLogFiles - numTests;
 
-    console.log(this._logFiles);
-
     testResult.testResults.forEach((result, index) => {
       profiles[result.fullName.replace(/\s/g, '-')] = {
         logFile: this._logFiles[index + delta],
@@ -47,10 +45,18 @@ class FlamegrillReporter {
       const tempDir = path.join(root, 'dist/flamegrill/tmp');
       await fs.mkdirp(outDir);
       await fs.mkdirp(tempDir);
-      await processProfiles(profiles, {
+      const processed = await processProfiles(profiles, {
         outDir,
         tempDir
       });
+
+      console.log('Generated flamecharts: ');
+      Object.keys(processed).forEach(scenario => {
+        const result = processed[scenario];
+        console.log(` - ${scenario}: ${result.output.flamegraphFile}`);
+      });
+
+      console.log();
     })();
   }
 }
