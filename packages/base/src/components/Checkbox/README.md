@@ -43,23 +43,25 @@ FastDNA Checkbox [docs](https://github.com/microsoft/fast-dna/tree/master/packag
 
 | Name                 | Type                                                        |
 | --------------       | ----------------------------------------------------------- |
-| checked              | boolean                                                     |                                                                                |
+| checked              | boolean                                                     |                 
 | as                   | React.ElementType                                           |
 | className            | string                                                      |
 | defaultChecked       | boolean                                                     |
 | disabled             | boolean                                                     |
-| ariaLabel            | string                                                      |                                                                                
-| ariaDescribedBy      | string                                                      |                                                                                
+| ariaLabel            | string                                                      |                                                                           
+| ariaDescribedBy      | string                                                      |                                                            
 | ariaLabelledBy       | string                                                      |                                                                       
 | onChange             | (ev: Event, value: number) => void                          |
 | label                | string                                                      |
 | vertical             | boolean                                                     |
+| name                 | string                                                      |
 
-Note: rtl, styles, and theme come from compose or the ThemeProvider. 
+Note: rtl, styles, and theme come from compose or the ThemeProvider. And name has been added to support checkbox in form scenarios.
 
 Removing the following two props because the ARIA spec dictates role='checkbox' doesn't need aria-posinset and aria-setsize. These are only valid for role='option' which is only in the case the checkbox is a part of a listbox, which is not something we need to account for in the base component API. If the user does need to provide these two props, slotProps could be used to apply additional props to any slot.
+
 | Name                                  | Concern                                                           |
-| ------------------------------------- | ------------------------------------------------------------------|
+| ------------------------------------- | ----------------------------------------------------------------- |
 | ariaPositionInset                     | if checkbox is in a set, should be up to the user to provide a11y |             
 | ariaSetSize                           | same as above                                                     |
 
@@ -221,6 +223,7 @@ Invalid state/error state?
 ### Behaviors
 
 Aria spec: https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox
+https://www.w3.org/TR/wai-aria-practices/#checkbox
 
 Fluent UI HIG: https://microsoft.sharepoint-df.com/:w:/t/OPGUXLeads/EbBiGJ-gLPFGszdhSxb8X5IBFik0ax7wZLJc8FlDXOwDYA?e=Cy4Er3
 
