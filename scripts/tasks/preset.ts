@@ -15,7 +15,7 @@ import {
 } from 'just-scripts';
 import { publishPrepareTask } from './publishPrepareTask';
 import { autoProjectRefsTask, autoProjectRefsVerifyTask } from './autoProjectRefsTask';
-import { e2eTask, e2eWatchTask } from './e2eTask';
+import { e2eTask, e2eWatchTask, e2ePerfTask } from './e2eTask';
 import { httpServerTask } from './httpServerTask';
 import path from 'path';
 
@@ -70,6 +70,8 @@ task(
 );
 
 task('e2e', e2eTask);
+
+task('e2e:perf', e2ePerfTask());
 
 task(
   'e2e:watch',
