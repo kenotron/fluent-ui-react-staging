@@ -1,20 +1,29 @@
-import * as React from "react";
+import { useImperativeHandle, useRef } from "react";
 import { mergeSlotProps } from "@fluentui/react-theming";
+import { IStateProps } from "../../utilities/Slots.types";
 import { ILinkProps } from "./Link.types";
 
 export interface ILinkState {
   rootRef: React.Ref<Element>;
 }
 
-const useLinkState = (userProps: ILinkProps): ILinkState => {
-  const rootRef = React.useRef<HTMLElement>(null);
+const useLinkState = (userProps: IStateProps<ILinkProps>): ILinkState => {
+  const { componentRef } = userProps;
+  
+  const rootRef = useRef<HTMLElement>(null);
+
+  useImperativeHandle(componentRef, () => ({
+    focus: () => {
+      rootRef.current && rootRef.current.focus();
+    }
+  }));
 
   return { 
     rootRef
   };
 };
 
-export const useLink = (props: ILinkProps) => {
+export const useLink = (props: IStateProps<ILinkProps>) => {
   const { disabled, href } = props;
 
   const state = useLinkState(props);

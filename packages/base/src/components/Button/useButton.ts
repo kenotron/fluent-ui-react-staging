@@ -1,5 +1,6 @@
-import * as React from "react";
+import { useImperativeHandle, useRef } from "react";
 import { mergeSlotProps } from "@fluentui/react-theming";
+import { IStateProps } from "../../utilities/Slots.types";
 import { IButtonProps } from "./Button.types";
 
 export interface IButtonState {
@@ -7,10 +8,16 @@ export interface IButtonState {
   rootRef: React.Ref<Element>;
 }
 
-const useButtonState = (userProps: IButtonProps): IButtonState => {
-  const { disabled, onClick } = userProps;
+const useButtonState = (userProps: IStateProps<IButtonProps>): IButtonState => {
+  const { componentRef, disabled, onClick } = userProps;
 
-  const rootRef = React.useRef<HTMLElement>(null);
+  const rootRef = useRef<HTMLElement>(null);
+
+  useImperativeHandle(componentRef, () => ({
+    focus: () => {
+      rootRef.current && rootRef.current.focus();
+    }
+  }));
 
   const onButtonClick = (ev: MouseEvent) => {
     if (!disabled && onClick) {
@@ -28,7 +35,7 @@ const useButtonState = (userProps: IButtonProps): IButtonState => {
   };
 }
 
-export const useButton = (props: IButtonProps) => {
+export const useButton = (props: IStateProps<IButtonProps>) => {
   const { disabled, href } = props;
 
   const state = useButtonState(props);

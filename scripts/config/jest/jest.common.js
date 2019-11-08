@@ -1,5 +1,6 @@
 const { defaults: tsjPreset } = require('ts-jest/presets');
 const { resolveCwd } = require('just-scripts');
+const path = require('path');
 
 module.exports = {
   transform: {
@@ -12,5 +13,6 @@ module.exports = {
       tsConfig: resolveCwd('tsconfig.json'),
       packageJson: resolveCwd('package.json')
     }
-  }
+  },
+  setupFilesAfterEnv: [path.join(__dirname, 'jestSetup.common.js')],
 };

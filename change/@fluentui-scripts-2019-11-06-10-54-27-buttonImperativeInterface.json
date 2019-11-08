@@ -1,0 +1,9 @@
+{
+  "type": "patch",
+  "comment": "Abstracting enzyme global configuration.",
+  "packageName": "@fluentui/scripts",
+  "email": "Humberto.Morimoto@microsoft.com",
+  "commit": "f68faf0f23959bad380b8b2d1465660c37e8de43",
+  "date": "2019-11-06T18:54:26.994Z",
+  "file": "D:\\fluent-ui\\change\\@fluentui-scripts-2019-11-06-10-54-27-buttonImperativeInterface.json"
+}

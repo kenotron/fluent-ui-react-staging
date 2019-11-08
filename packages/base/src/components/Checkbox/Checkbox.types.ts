@@ -1,4 +1,4 @@
-import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/ISlots";
+import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/Slots.types";
 
 export interface ICheckboxSlots {
   /** Intended to contain the Checkbox. */

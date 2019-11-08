@@ -1,4 +1,4 @@
-import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/ISlots";
+import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/Slots.types";
 
 export interface ILinkSlots {
   /** Intended to contain the link. */
@@ -9,7 +9,7 @@ export type ILinkSlotProps = ISlotProps<ILinkSlots>;
 
 export interface ILinkClasses extends IClasses<ILinkSlots> {}
 
-export interface ILinkProps extends ISlottableProps<ILinkSlotProps, ILinkClasses> {
+export interface ILinkProps extends ISlottableProps<ILinkSlots, ILinkClasses> {
   /** Defines the children of the Link component. */
   children?: React.ReactNode;
 
