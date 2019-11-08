@@ -2,6 +2,20 @@
   "name": "@fluentui/base",
   "entries": [
     {
+      "date": "Wed, 06 Nov 2019 21:01:40 GMT",
+      "tag": "@fluentui/base_v0.3.0",
+      "version": "0.3.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Checkbox: Adding base prototype.",
+            "author": "email not defined",
+            "commit": "b459ab9a2c0a092e709f2cf39ee5b32dd35ba156"
+          }
+        ]
+      }
+    },
+    {
       "date": "Wed, 30 Oct 2019 23:35:42 GMT",
       "tag": "@fluentui/base_v0.2.0",
       "version": "0.2.0",

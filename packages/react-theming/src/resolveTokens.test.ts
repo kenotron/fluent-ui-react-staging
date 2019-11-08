@@ -16,7 +16,7 @@ const reifyColors = (
   partial: Partial<IThemeColorDefinition>
 ): IThemeColorDefinition => {
   const defaultRamp: IColorRamp = { values: [], index: -1 };
-  const result: IThemeColorDefinition = {
+  const result: Partial<IThemeColorDefinition> = {
     background: "#000",
     brand: defaultRamp,
     accent: defaultRamp,
@@ -26,7 +26,7 @@ const reifyColors = (
     danger: defaultRamp,
     ...partial
   };
-  return result;
+  return result as IThemeColorDefinition;
 };
 
 describe("resolveTokens", () => {
@@ -65,7 +65,7 @@ describe("resolveTokens", () => {
           value: "abc",
           value2: {
             dependsOn: ["value"],
-            resolve: ([value]: any, theme: any) => value.value + "def"
+            resolve: ([value]: any, theme: any) => value + "def"
           }
         }
       ])
@@ -88,7 +88,7 @@ describe("resolveTokens", () => {
           {
             value2: {
               dependsOn: ["value"],
-              resolve: ([value]: any, theme: ITheme) => value.value + "def"
+              resolve: ([value]: any, theme: ITheme) => value + "def"
             },
             value: (_: any, t: ITheme) => t.colors.brand.values[0]
           }
@@ -120,7 +120,7 @@ describe("resolveTokens", () => {
             tokens: {
               value2: {
                 dependsOn: ["value"],
-                resolve: ([value]: any, theme: ITheme) => value.value + "bar"
+                resolve: ([value]: any, theme: ITheme) => value + "bar"
               }
             }
           }
@@ -130,7 +130,7 @@ describe("resolveTokens", () => {
         value: "foo",
         value2: {
           dependsOn: ["value"],
-          resolve: ([value]: any, theme: ITheme) => value.value + "foo"
+          resolve: ([value]: any, theme: ITheme) => value + "foo"
         }
       };
       const result = resolveTokens("MyComponent", theme, [baseTokens]);

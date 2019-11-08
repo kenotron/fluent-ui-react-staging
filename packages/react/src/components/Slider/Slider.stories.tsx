@@ -1,9 +1,9 @@
 import React from "react";
 import { Slider } from "./Slider";
 import { ISliderTokens } from "./Slider.tokens";
-import { ThemeContext, ITheme } from "@fluentui/react-theming";
+import { ThemeProvider, ITheme, createTheme } from "@fluentui/react-theming";
 import { number } from "prop-types";
-
+import { Box } from "@fluentui/react-theming";
 export default {
   component: "Slider",
   title: "Slider"
@@ -14,15 +14,20 @@ const defaultColorRamp = {
   index: -1
 };
 
-const theme: ITheme = {
+const fluentLight: ITheme = createTheme({
+  direction: "ltr",
   colors: {
-    background: "",
+    background: "white",
+    bodyText: "black",
+    subText: "#333",
+    disabledText: "#ccc",
     brand: defaultColorRamp,
     accent: defaultColorRamp,
     neutral: defaultColorRamp,
     success: defaultColorRamp,
     warning: defaultColorRamp,
-    danger: defaultColorRamp
+    danger: defaultColorRamp,
+    text: defaultColorRamp
   },
   components: {},
   icons: {},
@@ -31,7 +36,6 @@ const theme: ITheme = {
     scale: 0,
     unit: "px"
   },
-  direction: "ltr",
   fonts: {
     default: "",
     userContent: "",
@@ -50,35 +54,70 @@ const theme: ITheme = {
     base: 0,
     scale: 0,
     unit: "px"
-  }
-};
+  },
 
-const redTheme: ITheme = {
-  ...theme,
-  components: {
-    Slider: {
-      tokens: {
-        thumbColor: "#900",
-        thumbColorHovered: "#b00",
-        thumbColorPressed: "#f00"
+  schemes: {
+    header: {
+      colors: {
+        background: "black",
+        bodyText: "white"
       }
     }
   }
-};
+});
+
+const teamsLight: ITheme = createTheme(fluentLight, {
+  colors: {},
+  components: {
+    Slider: {
+      tokens: {
+        railSize: "0.1429rem",
+        trackSize: "0.1429rem",
+        railColor: "rgb(225, 223, 221)",
+        railColorHovered: { dependsOn: "railColor" },
+        trackColor: "rgb(98, 100, 167)",
+        trackColorHovered: { dependsOn: "trackColor" },
+        thumbSize: "0.7143rem",
+        thumbBorderWidth: 0,
+        thumbColor: "rgb(96, 94, 92)",
+        thumbSizePressed: "1rem"
+      } as ISliderTokens
+    }
+  }
+});
 
 const Wrapper = (p: React.HTMLAttributes<any>) => (
-  <ThemeContext.Provider value={theme}>
-    <div style={{ padding: 20, ...p.style }}>{p.children}</div>
-  </ThemeContext.Provider>
+  <ThemeProvider theme={fluentLight} {...p} />
 );
 
 export const fluentSlider = () => (
-  <Wrapper>
+  <ThemeProvider theme={fluentLight}>
+    Default (ltr):
     <Slider
       defaultValue={50}
       slotProps={{ thumb: { "aria-label": "I am a slider" } }}
     />
-  </Wrapper>
+    Disabled:
+    <Slider
+      disabled
+      defaultValue={50}
+      slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+    />
+    Header scheme:
+    <ThemeProvider scheme="header">
+      Default:
+      <Slider
+        defaultValue={50}
+        slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+      />
+      Disabled:
+      <Slider
+        disabled
+        defaultValue={50}
+        slotProps={{ thumb: { "aria-label": "I am a slider" } }}
+      />
+    </ThemeProvider>
+  </ThemeProvider>
 );
 
 export const fluentSliderDisabled = () => (
@@ -95,10 +134,8 @@ export const fluentVerticalSlider = () => (
   </Wrapper>
 );
 
-export const styledRedFluentSlider = (p: React.HTMLAttributes<any>) => (
-  <ThemeContext.Provider value={redTheme}>
-    <div style={{ padding: 20, ...p.style }}>
-      <Slider defaultValue={50} />
-    </div>
-  </ThemeContext.Provider>
+export const teamsLightSlider = (p: React.HTMLAttributes<any>) => (
+  <ThemeProvider theme={teamsLight}>
+    <Slider defaultValue={50} />
+  </ThemeProvider>
 );

@@ -1,7 +1,13 @@
 # Change Log - @fluentui/scripts
 
-This log was last generated on Tue, 05 Nov 2019 23:42:53 GMT and should not be manually modified.
+This log was last generated on Thu, 07 Nov 2019 21:42:52 GMT and should not be manually modified.
 
+## 1.1.0
+Thu, 07 Nov 2019 21:42:52 GMT
+
+### Minor changes
+
+- adds scenario tests via jest-puppeteer (kchau@microsoft.com)
 ## 1.0.2
 Tue, 05 Nov 2019 23:42:53 GMT
 
