@@ -25,6 +25,7 @@
     "clean": "just-scripts clean",
     "e2e": "just-scripts e2e",
     "e2e:watch": "just-scripts e2e:watch",
+    "perf": "just-scripts e2e:perf",
     "just": "just-scripts",
     "lint": "just-scripts lint",
     "start": "just-scripts storybook:start",

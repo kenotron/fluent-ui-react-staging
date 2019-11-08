@@ -6,6 +6,6 @@
     "outDir": "lib",
     "types": ["node", "jest", "expect-puppeteer"]
   },
-  "include": ["src", "typings/*.d.ts"],
+  "include": ["src", "../../scripts/typings/*.d.ts"],
   "references": [{ "path": "../base/tsconfig.json" }, { "path": "../react-theming/tsconfig.json" }]
 }
