@@ -1,7 +1,13 @@
 # Change Log - @fluentui/scripts
 
-This log was last generated on Fri, 08 Nov 2019 19:50:31 GMT and should not be manually modified.
+This log was last generated on Sat, 09 Nov 2019 05:10:48 GMT and should not be manually modified.
 
+## 1.1.2
+Sat, 09 Nov 2019 05:10:48 GMT
+
+### Patches
+
+- part 1 of integrating flamegrill (kchau@microsoft.com)
 ## 1.1.1
 Fri, 08 Nov 2019 19:50:31 GMT
 
