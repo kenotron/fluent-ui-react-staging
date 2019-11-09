@@ -1,0 +1,9 @@
+{
+  "type": "patch",
+  "comment": "Compose: Tighten typings, minor fixes",
+  "packageName": "@fluentui/react-theming",
+  "email": "joschect@microsoft.com",
+  "commit": "bef7d8b08c861360a828307a89ad2c62eb25837c",
+  "date": "2019-11-09T05:11:41.863Z",
+  "file": "/Users/joschect-m1/Git/fluent-ui-react-staging/change/@fluentui-react-theming-2019-11-08-21-11-41-fix-typings.json"
+}
