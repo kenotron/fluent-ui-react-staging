@@ -1,0 +1,9 @@
+{
+  "type": "patch",
+  "comment": "part 1 of integrating flamegrill",
+  "packageName": "@fluentui/scripts",
+  "email": "kchau@microsoft.com",
+  "commit": "dd7c427564e8c56b8d6bb8f93b2f11d60ef65169",
+  "date": "2019-11-08T21:36:21.848Z",
+  "file": "/Users/ken/workspace/fluent/change/@fluentui-scripts-2019-11-08-13-36-21-flamegrill.json"
+}

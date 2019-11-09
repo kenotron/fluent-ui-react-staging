@@ -1,5 +1,6 @@
 const { defaults: tsjPreset } = require('ts-jest/presets');
-const { resolveCwd } = require('just-scripts');
+const { resolveCwd, resolve } = require('just-scripts');
+const path = require('path');
 
 module.exports = {
   globalSetup: 'jest-environment-puppeteer/setup',
@@ -16,5 +17,6 @@ module.exports = {
       tsConfig: resolveCwd('tsconfig.json'),
       packageJson: resolveCwd('package.json')
     }
-  }
+  },
+  reporters: [path.join(__dirname, './flamegrillReporter.js')]
 };
