@@ -1,7 +1,13 @@
 # Change Log - @fluentui/base
 
-This log was last generated on Wed, 06 Nov 2019 21:01:40 GMT and should not be manually modified.
+This log was last generated on Fri, 08 Nov 2019 19:50:31 GMT and should not be manually modified.
 
+## 0.4.0
+Fri, 08 Nov 2019 19:50:31 GMT
+
+### Minor changes
+
+- Button and Link: Adding imperative focus behavior and tests to prototypes. (Humberto.Morimoto@microsoft.com)
 ## 0.3.0
 Wed, 06 Nov 2019 21:01:40 GMT
 

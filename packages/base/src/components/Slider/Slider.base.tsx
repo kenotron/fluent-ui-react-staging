@@ -11,7 +11,7 @@ export const SliderBase: React.FunctionComponent<ISliderProps> = (
     rail: Rail = "div",
     thumb: Thumb = "div",
     track: Track = "div"
-  } = (props.slots || {}) as ISliderSlots;
+  } = props.slots || ({} as ISliderSlots);
   const { slotProps = {} } = useSlider(props);
 
   return (
@@ -21,34 +21,4 @@ export const SliderBase: React.FunctionComponent<ISliderProps> = (
       <Thumb {...slotProps.thumb} />
     </Root>
   );
-};
-
-/**
- * Slider component proptypes.
- */
-SliderBase.propTypes = {
-  defaultValue: PropTypes.number,
-  max: PropTypes.number,
-  min: PropTypes.number,
-  onChange: PropTypes.func,
-  snapToStep: PropTypes.bool,
-  step: PropTypes.number,
-  value: PropTypes.number,
-  vertical: PropTypes.bool,
-
-  /** slots */
-  slots: PropTypes.shape({
-    root: PropTypes.elementType.isRequired,
-    rail: PropTypes.elementType.isRequired,
-    track: PropTypes.elementType.isRequired,
-    thumb: PropTypes.elementType.isRequired
-  }),
-
-  /** slot props */
-  slotProps: PropTypes.shape({
-    root: PropTypes.object,
-    rail: PropTypes.object,
-    track: PropTypes.object,
-    thumb: PropTypes.object
-  })
 };

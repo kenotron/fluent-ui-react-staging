@@ -1,4 +1,4 @@
-import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/ISlots";
+import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/Slots.types";
 
 export interface ISliderSlots {
   /** Intended to contain the slider */
@@ -19,7 +19,7 @@ export interface ISliderClasses extends IClasses<ISliderSlots> {
   rootDisabled: string;
 }
 
-export interface ISliderProps extends ISlottableProps<ISliderSlotProps, ISliderClasses> {
+export interface ISliderProps extends ISlottableProps<ISliderSlots, ISliderClasses> {
   /** Sets the disabled flag, causing the control to be inactive. */
   disabled?: boolean;
 

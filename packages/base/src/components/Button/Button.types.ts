@@ -1,4 +1,4 @@
-import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/ISlots";
+import { IClasses, ISlotProps, ISlottableProps } from "../../utilities/Slots.types";
 
 export interface IButtonSlots {
     /** Intended to contain the icon that appears after the specified children. */
@@ -15,7 +15,7 @@ export type IButtonSlotProps = ISlotProps<IButtonSlots>;
 
 export interface IButtonClasses extends IClasses<IButtonSlots> {}
 
-export interface IButtonProps extends ISlottableProps<IButtonSlotProps, IButtonClasses> {
+export interface IButtonProps extends ISlottableProps<IButtonSlots, IButtonClasses> {
     /** Defines the children of the Button component. */
     children?: React.ReactNode;
 
