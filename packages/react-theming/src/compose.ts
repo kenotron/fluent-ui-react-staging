@@ -2,28 +2,25 @@ import { useTheme } from "./themeContext";
 import { resolveTokens } from "./resolveTokens";
 import jss from "jss";
 import { ITheme } from "./theme.types";
-type Options = ComposedOptions[];
+type Options = ComposeOptions[];
 type SlotsAssignment = any;
 
-interface ComposedOptions {
-  name: string;
-  slots: any;
-  tokens: any;
-  styles: any; 
+interface ComposeOptions {
+  name?: string;
+  slots?: any;
+  tokens?: any;
+  styles?: any; 
 }
-export type ComposeOptions = Partial<ComposedOptions>;
 
 export interface Composeable {
   classes?: any;
   slots?: any;
 }
 
-
 interface ComposedFunctionComponent<TProps> extends React.FunctionComponent<TProps> { 
-  __optionsSet?: ComposedOptions[];
+  __optionsSet?: ComposeOptions[];
   __directRender?: React.FunctionComponent<TProps>;
 }
-
 
 /** _composeFactory returns a compose function.
  * This allows tests to override aspects of compose.
@@ -36,12 +33,14 @@ export const _composeFactory = (useThemeHook: any = useTheme) => {
     options: ComposeOptions = {}
   ) => {
     const classNamesCache = new WeakMap();
-    const optionsSet = _mergeOptions(options, baseComponent.__optionsSet)
+    const optionsSet = _mergeOptions(options, baseComponent.__optionsSet);
+    
+    const componentName = options.name || "WARNING-UNNAMED";
 
     const renderFn = baseComponent.__directRender || baseComponent;
     const Component: ComposedFunctionComponent<TProps> = (props: TProps) => {
       const theme: ITheme = useThemeHook();
-      const slots = resolveSlots(name, optionsSet, theme);
+      const slots = resolveSlots(componentName, optionsSet, theme);
 
       if (!theme) {
         throw new Error(
@@ -51,7 +50,7 @@ export const _composeFactory = (useThemeHook: any = useTheme) => {
 
       return renderFn({
         ...props,
-        classes: _getClasses(name, theme, classNamesCache, optionsSet),
+        classes: _getClasses(componentName, theme, classNamesCache, optionsSet),
         slots
       });
     };
@@ -62,8 +61,7 @@ export const _composeFactory = (useThemeHook: any = useTheme) => {
 
     Component.propTypes = baseComponent.propTypes;
 
-    // By this time all options must be defined
-    Component.__optionsSet = optionsSet as ComposedOptions[];
+    Component.__optionsSet = optionsSet;
     Component.__directRender = baseComponent.__directRender || baseComponent;
 
     Component.displayName = options.name || "Composed Component";
@@ -113,13 +111,14 @@ export const _composeFactory = (useThemeHook: any = useTheme) => {
  */
 export const compose = _composeFactory();
 
-const _mergeOptions = (options: ComposeOptions, baseOptions?: ComposedOptions[]): ComposedOptions[] => {
-    let optionsSet: (ComposedOptions | ComposeOptions) [] = [options];
+const _mergeOptions = (options: ComposeOptions, baseOptions?: Options): Options => {
+    let optionsSet: Options = [options];
     if (baseOptions) {
       optionsSet = [...baseOptions, options];
     }
-    return optionsSet as ComposedOptions[];
-}
+    return optionsSet;
+  };
+
 
 const _getClasses = (
   name: string,
