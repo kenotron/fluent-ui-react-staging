@@ -1,6 +1,6 @@
 {
   "name": "@fluentui/native-compose",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "> TODO: description",
   "homepage": "https://github.com/microsoft/fluent-ui#readme",
   "bugs": {
@@ -37,10 +37,10 @@
     "@uifabricshared/foundation-composable": "0.2.3"
   },
   "devDependencies": {
-    "@fluentui/scripts": "*",
+    "@fluentui/scripts": "1.1.2",
     "@types/jss": "^9.5.8",
     "@types/react": "^16.9.2",
-    "@fluentui/react-theming": "^0.1.0",
+    "@fluentui/react-theming": "^0.1.2",
     "react": "^16.9.0"
   }
 }

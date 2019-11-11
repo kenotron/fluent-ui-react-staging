@@ -1,7 +1,13 @@
 # Change Log - @fluentui/react
 
-This log was last generated on Wed, 06 Nov 2019 18:35:34 GMT and should not be manually modified.
+This log was last generated on Mon, 11 Nov 2019 23:53:02 GMT and should not be manually modified.
 
+## 0.2.0
+Mon, 11 Nov 2019 23:53:02 GMT
+
+### Minor changes
+
+- add demo slider using native framework (jasonmo@microsoft.com)
 ## 0.1.1
 Wed, 06 Nov 2019 18:35:34 GMT
 

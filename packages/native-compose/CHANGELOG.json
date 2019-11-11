@@ -1,0 +1,19 @@
+{
+  "name": "@fluentui/native-compose",
+  "entries": [
+    {
+      "date": "Mon, 11 Nov 2019 23:53:02 GMT",
+      "tag": "@fluentui/native-compose_v0.1.0",
+      "version": "0.1.0",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add native compose framework",
+            "author": "jasonmo@microsoft.com",
+            "commit": "2fc8f234d78ca812f9420e1a3c66c515bcddf23c"
+          }
+        ]
+      }
+    }
+  ]
+}
