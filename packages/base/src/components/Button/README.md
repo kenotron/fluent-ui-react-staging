@@ -133,6 +133,8 @@ The following section documents the properties that will become part of the new 
 
 ### Recommended component props
 
+The `Button` component should inherit the HTML props of the web `button` so that props like `onClick` and `aria` have the same typings as the native web counterparts.
+
 | Name        | Type              | Default value | Description                                                                            |
 | ----------- | :--------------:  | :-----------: | -------------------------------------------------------------------------------------- |
 | `as`        | `string`          |               | Defines a component that should be used as the root element of the `Button`.           |
@@ -140,6 +142,8 @@ The following section documents the properties that will become part of the new 
 | `disabled`  | `boolean`         | `false`       | Defines whether the `Button` is in an enabled or disabled state.                       |
 | `href`      | `string`          |               | Defines an href that, if provided, will make the `Button` render as an anchor.         |
 | `primary`   | `boolean`         | `false`       | Defines whether the visual representation of the `Button` should be emphasized or not. |
+
+> TODO: Talk about the inheritance of native props, what should we do about them? `Pick`, `Omit`, get all of them? What do we do about slots? Do we defect to `any`?
 
 ### Recommended interface props
 
