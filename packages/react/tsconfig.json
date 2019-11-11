@@ -4,8 +4,25 @@
     "composite": true,
     "rootDir": "src",
     "outDir": "lib",
-    "types": ["node", "jest", "expect-puppeteer", "jest-environment-puppeteer"]
+    "types": [
+      "node",
+      "jest",
+      "expect-puppeteer",
+      "jest-environment-puppeteer"
+    ]
   },
-  "include": ["src"],
-  "references": [{ "path": "../base/tsconfig.json" }, { "path": "../react-theming/tsconfig.json" }]
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../base/tsconfig.json"
+    },
+    {
+      "path": "../native-compose/tsconfig.json"
+    },
+    {
+      "path": "../react-theming/tsconfig.json"
+    }
+  ]
 }

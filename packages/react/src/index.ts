@@ -1,1 +1,2 @@
-export * from "./components/Slider/Slider";
+export * from './components/NativeSlider/NativeSlider';
+export * from './components/Slider/Slider';

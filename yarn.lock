@@ -3239,6 +3239,32 @@
     prop-types "^15.5.10"
     tslib "^1.7.1"
 
+"@uifabricshared/foundation-composable@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@uifabricshared/foundation-composable/-/foundation-composable-0.2.3.tgz#5fd64e899786328b3e3abd220a7e6d6fc15ddea2"
+  integrity sha512-IcFsOylkdjBkcMrnAld7XOp0dMqeQ1bJzG+x2dhU1aecOmNvCjQAwyhLV+kKY4uDqVZApw7GBxlA8dMF86SIYA==
+  dependencies:
+    "@uifabricshared/foundation-settings" "^0.3.3"
+
+"@uifabricshared/foundation-settings@0.3.3", "@uifabricshared/foundation-settings@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@uifabricshared/foundation-settings/-/foundation-settings-0.3.3.tgz#dd4afb82876c7f246af263757843b05e32158cd2"
+  integrity sha512-Q2RI8qcdEmwwn3WH0QJwN88zmThgQxviXsVSz37hdlHJ900jY14YF+gEO47SXWXd3w3NWhRYMx+IJ50jtJRq2g==
+  dependencies:
+    "@uifabricshared/immutable-merge" "^0.1.6"
+
+"@uifabricshared/immutable-merge@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@uifabricshared/immutable-merge/-/immutable-merge-0.1.6.tgz#57727f05fe0ac8d8ed297975592d570ae8d8f318"
+  integrity sha512-ovOawZtISRCHpw9/O0Vw7dGOpEYf+EheD679qhDcvMk7AwiICqk0cGoL+SJsPQJnLG/lxpWzggWdQmMZbTJE0g==
+
+"@uifabricshared/themed-settings@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@uifabricshared/themed-settings/-/themed-settings-0.2.4.tgz#772f9a5ad470b8dcd55187b1ba49bca1f3b273e7"
+  integrity sha512-87kgf8i5O5hN/qnaa1ZTgYPGKv5csN9VkCOS/KEXTe/2cmIi1v9xdydGXynVr6zsz+YvCHTl1WDMRFBXYb5nXg==
+  dependencies:
+    "@uifabricshared/foundation-settings" "^0.3.3"
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"

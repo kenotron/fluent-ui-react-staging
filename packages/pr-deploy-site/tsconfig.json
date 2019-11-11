@@ -11,6 +11,9 @@
       "path": "../base/tsconfig.json"
     },
     {
+      "path": "../native-compose/tsconfig.json"
+    },
+    {
       "path": "../react/tsconfig.json"
     },
     {

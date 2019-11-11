@@ -36,6 +36,9 @@
   "dependencies": {
     "@fluentui/base": "^0.4.1",
     "@fluentui/react-theming": "^0.1.2",
+    "@fluentui/native-compose": "^0.0.0",
+    "@uifabricshared/foundation-composable": "0.2.3",
+    "@uifabricshared/foundation-settings": "0.3.3",
     "react": "^16.9.0"
   },
   "devDependencies": {
