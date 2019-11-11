@@ -34,7 +34,7 @@
     "update-snapshots": "just-scripts jest:snapshots"
   },
   "dependencies": {
-    "@fluentui/base": "^0.4.0",
+    "@fluentui/base": "^0.4.1",
     "@fluentui/react-theming": "^0.1.2",
     "react": "^16.9.0"
   },
