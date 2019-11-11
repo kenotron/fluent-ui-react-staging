@@ -43,9 +43,9 @@ describe("compose", () => {
     it("sets complicated options on the result", () => {
       const composed: any = compose(
         baseComponent(),
-        { foo: { bar: "baz" } }
+        { slots: { bar: "baz" } }
       );
-      expect(composed.__optionsSet).toEqual([{ foo: { bar: "baz" } }]);
+      expect(composed.__optionsSet).toEqual([{ slots: { bar: "baz" } }]);
     });
 
     it("sets direct render on the resulting component for recomposition", () => {
@@ -160,7 +160,7 @@ describe("compose", () => {
     });
     it("returns empty when no slots defined in options", () => {
       expect(
-        compose.resolveSlots("", [{ foo: "bar" }], makeBlankTheme())
+        compose.resolveSlots("", [{ styles: {foo: "bar" }}], makeBlankTheme())
       ).toEqual({});
     });
     it('overwrites slots that are defined "later"', () => {
