@@ -52,7 +52,6 @@ export const useCheckbox = (props: ICheckboxProps) => {
       onClick,
       ref: rootRef,
       role: "checkbox",
-      type: "checkbox"
     }
   })
 

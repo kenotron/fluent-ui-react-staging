@@ -24,11 +24,11 @@ BaseUI Checkbox [docs](https://baseweb.design/components/Checkbox/)
 
 Chakra Checkbox [docs](https://chakra-ui.com/Checkbox)
 
-Cabon Checkbox [docs](https://www.carbondesignsystem.com/components/Checkbox/code)
+Cabon Checkbox [docs](https://www.carbondesignsystem.com/components/checkbox/code)
 
 AntD Checkbox [docs](https://ant.design/components/Checkbox/)
 
-FastDNA Checkbox [docs](https://github.com/microsoft/fast-dna/tree/master/packages/fast-components-@fluentui/base/src/Checkbox), [example](https://explore.fast.design/components/Checkbox)
+FastDNA Checkbox [docs](https://explore.fast.design/components/Checkbox)
 
 
 ## Props
@@ -162,11 +162,8 @@ Invalid state/error state?
 
 ```html
 <label class="checkbox-root">
-    <span>
-        <input class="checkbox" type="checkbox" aria-checked"false" aria-label="Fluent checkbox">
-        <i class="icon"></i>
-    </span>
-    <span class="checkbox-label">Fluent checkbox</span>
+    <input class="checkbox" role="checkbox" aria-checked"false" aria-label="Fluent checkbox">
+    <i class="icon"></i>
 </label>
 ```
 
