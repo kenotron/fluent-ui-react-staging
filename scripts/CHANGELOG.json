@@ -2,6 +2,20 @@
   "name": "@fluentui/scripts",
   "entries": [
     {
+      "date": "Tue, 12 Nov 2019 17:40:53 GMT",
+      "tag": "@fluentui/scripts_v1.1.3",
+      "version": "1.1.3",
+      "comments": {
+        "patch": [
+          {
+            "comment": "e2e runs do not need a flamegraph reporter",
+            "author": "kchau@microsoft.com",
+            "commit": "2956ae6b66fa3545326238077ebbe506bdbd2730"
+          }
+        ]
+      }
+    },
+    {
       "date": "Sat, 09 Nov 2019 05:10:48 GMT",
       "tag": "@fluentui/scripts_v1.1.2",
       "version": "1.1.2",

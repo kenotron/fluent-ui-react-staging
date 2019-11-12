@@ -1,7 +1,13 @@
 # Change Log - @fluentui/react
 
-This log was last generated on Mon, 11 Nov 2019 23:53:02 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Nov 2019 17:40:53 GMT and should not be manually modified.
 
+## 0.2.1
+Tue, 12 Nov 2019 17:40:53 GMT
+
+### Patches
+
+- e2e runs do not need a flamegraph reporter (kchau@microsoft.com)
 ## 0.2.0
 Mon, 11 Nov 2019 23:53:02 GMT
 

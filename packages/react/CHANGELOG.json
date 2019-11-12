@@ -2,6 +2,20 @@
   "name": "@fluentui/react",
   "entries": [
     {
+      "date": "Tue, 12 Nov 2019 17:40:53 GMT",
+      "tag": "@fluentui/react_v0.2.1",
+      "version": "0.2.1",
+      "comments": {
+        "patch": [
+          {
+            "comment": "e2e runs do not need a flamegraph reporter",
+            "author": "kchau@microsoft.com",
+            "commit": "2956ae6b66fa3545326238077ebbe506bdbd2730"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 11 Nov 2019 23:53:02 GMT",
       "tag": "@fluentui/react_v0.2.0",
       "version": "0.2.0",

@@ -1,7 +1,13 @@
 # Change Log - @fluentui/scripts
 
-This log was last generated on Sat, 09 Nov 2019 05:10:48 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Nov 2019 17:40:53 GMT and should not be manually modified.
 
+## 1.1.3
+Tue, 12 Nov 2019 17:40:53 GMT
+
+### Patches
+
+- e2e runs do not need a flamegraph reporter (kchau@microsoft.com)
 ## 1.1.2
 Sat, 09 Nov 2019 05:10:48 GMT
 

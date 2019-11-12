@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@stardust-ui/react-docs": "0.40.2",
-    "@fluentui/react": "0.2.0"
+    "@fluentui/react": "0.2.1"
   },
   "devDependencies": {
-    "@fluentui/scripts": "1.1.2"
+    "@fluentui/scripts": "1.1.3"
   }
 }

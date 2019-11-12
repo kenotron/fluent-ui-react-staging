@@ -1,9 +1,0 @@
-{
-  "type": "patch",
-  "comment": "e2e runs do not need a flamegraph reporter",
-  "packageName": "@fluentui/scripts",
-  "email": "kchau@microsoft.com",
-  "commit": "2956ae6b66fa3545326238077ebbe506bdbd2730",
-  "date": "2019-11-12T17:00:48.228Z",
-  "file": "/Users/ken/workspace/fluent/change/@fluentui-scripts-2019-11-12-09-00-48-e2efix.json"
-}
