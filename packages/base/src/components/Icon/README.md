@@ -2,17 +2,6 @@
 
 The `Icon` component provides a symbol, graphic or image that represents an application, a capability, or some other concept or specific entity with meaning for the user.
 
-## TODO List
-
-- For each TODO:
-  1. Read it
-  2. Do research
-  3. Answer questions
-  4. Remove TODO
-- Search for TODO, there should be none! Delete this section even.
-- Review with design crew.
-- Check into repo where code will live.
-
 ## Related variant considerations
 
 The following section documents variants of the component that currently exist in Fabric and identifies variants that exist in other component libraries but don't currently exist in Fabric, documenting which component libraries have those variants.
