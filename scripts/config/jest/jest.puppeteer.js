@@ -18,5 +18,5 @@ module.exports = {
       packageJson: resolveCwd('package.json')
     }
   },
-  reporters: [path.join(__dirname, './flamegrillReporter.js')]
+  ...(process.env.JEST_E2E_PROFILE && { reporters: [path.join(__dirname, './flamegrillReporter.js')] })
 };

@@ -27,6 +27,10 @@ steps:
     displayName: yarn test
 
   - script: |
+      yarn e2e
+    displayName: yarn e2e
+
+  - script: |
       yarn lint
     displayName: yarn lint
 
