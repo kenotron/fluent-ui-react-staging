@@ -1,0 +1,9 @@
+{
+  "type": "patch",
+  "comment": "Icon: Adding README spec to base components.",
+  "packageName": "@fluentui/base",
+  "email": "Humberto.Morimoto@microsoft.com",
+  "commit": "68eeeafd6668300705d94fb12ddc8e4fd16b64c1",
+  "date": "2019-11-12T01:14:11.791Z",
+  "file": "D:\\fluent-ui\\change\\@fluentui-base-2019-11-11-17-14-11-iconSpec.json"
+}
