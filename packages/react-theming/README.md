@@ -1,32 +1,74 @@
-Summary
-=======
+# Summary
 
-`react-compose` represents an approach to component authoring that
-results in lightweight styled components that can be extended and
-modified easily by both library and application developers.
+`react-compose` provides a set of tools for creating themable components. The `compose` tool takes a functional component and, given default options and contextual overrides provided through React context, computes injected props including `classes`, `slots`,  and `slotProps`. Styles are computed only when encountering unique theme objects per component, resulting in optimized performance.
 
-`compose` follows these 3 princples:
+Example:
 
--   prefer explicit implementation over magic
--   prefer faster components over more flexible components (if a
-    decision between the 2 must be made)
--   in order to ensure a component can be themed by any application,
-    decouple theming/styling from implementation of behaviors
+```
+import { SliderBase } from './Slider.base';
+import { compose } from '@fluentui/react-theming';
 
-`react-compose` is makes use of `FunctionalComponents` (and therefore
-expects developers to maintain all component state in hooks).
+export const Slider = compose(SliderBase, {
+  // the themable name of the component
+  name: 'Slider' 
+  
+  // the set of replacement tokens to be injected into the styles
+  tokens,        
+  
+  // The css styling to be injected as a `classes` prop
+  styles 
+
+  // A dictionary of React components representing the actual subcomponents to be used by the Slider
+  slots 
+});
+
+// Composed components can be recomposed to offer slightly different permutations.
+export const RedSlider = compose(Slider, {
+  tokens: { railColor: 'red' }
+});
+```
+
+Theming can be achieved through applications using a `ThemeProvider` component, also provided in the library:
+
+```tsx
+
+// Create a theme with a token override for the Slider.
+const theme = createTheme({
+  components: {
+    Slider: {
+      tokens: {
+        railColor: 'green'
+      }
+    }
+  }
+});
+
+// Render the slider using the theme.
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <Slider />
+  </ThemeProvider>
+);
+```
+
+## Principles
+
+`compose` follows 3 principles:
+
+- Prefer faster components over more flexible components (if a decision between the 2 must be made.)
+
+- Decouple theming/styling from implementation in order to ensure the styling approach can be replaced without rewriting the component.
+
+- Keep it simple; avoid adding too many concepts for developers to learn.
 
 Who is `compose` for?
----------------------
+-------------------
 
 Components created with `compose` are meant for use by anyone.
 
-`compose` itself is primarily intended for use by component authors; it
-provides a consistent means of attaching to a \"themed context\".
+`compose` itself is primarily intended for use by component authors; it provides a consistent means of attaching to a "themed context".
 
-`compose` can also be used by application developers to enable a greater
-level of customization when the \"theme\" does not provide enough
-flexibility.
+`compose` can also be used by application developers to enable a greater level of customization when the "theme" does not provide enough flexibility.
 
 When should I use `compose`?
 ----------------------------
@@ -38,37 +80,32 @@ When should I use `compose`?
 What\'s in a theme?
 -------------------
 
-A FluentUi theme contains several major sections. At at high level, it
+A Fluent UI theme contains several major sections. At at high level, it
 contains detail about colors, types, effects, spacing, and animation.
 Furthermore, a theme has the ability to override major details about
 each and every component\'s look and feel as well as behavior.
 
-TODO: document theme
+> TODO: document theme
 
 Using components created with `compose`
 =======================================
 
-Basic usage
------------
+There is no requirement around using components build with `compose`. If you use them without a theme, they will render with whichever default token/styling values, if any, are provided.
 
-Components created with `compose` should act and feel like ordinary,
-run-of-the-mill components. For instance, using a `Button` provided by
-FluentUi is nearly the same as a native `button`:
-
-    <Button onClick={() => alert('Hello, World!')}>Hi</Button>
+It is recommended the default styling provide very limited styling, leaving tokens as the preferred method for customizing the component.
 
 Styling components with a theme
 -------------------------------
 
-TODO: describe a theme
+Default styling and tokens can always be overridden using theme.
+
+> TODO: how would one replace styling completely, instead of overriding it?
 
 Customizing with tokens
 -----------------------
 
 Frequently, individual products design needs conflict with that of the
-base style.
-
-To accomodate necessary changes, `Tokens` exist to allow easy
+base style. To accomodate necessary changes, `Tokens` exist to allow easy
 modification of most all aspects of look and feel.
 
 A token is a key that corresponds to a value, usually from from the
