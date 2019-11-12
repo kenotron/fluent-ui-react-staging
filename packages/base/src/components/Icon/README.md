@@ -182,7 +182,7 @@ The following section documents the DOM structure for the component from differe
 
 #### Considerations
 
-- Only supports svg icons.
+- Only supports SVG icons.
 
 ### Atlaskit Icon
 
@@ -199,7 +199,7 @@ The following section documents the DOM structure for the component from differe
 
 #### Considerations
 
-- Only supports svg icons.
+- Only supports SVG icons.
 - To use provided icons you need to import built-in icon directly (i.e. `BookIcon`).
 
 ### Base Web Icon
@@ -218,7 +218,7 @@ The following section documents the DOM structure for the component from differe
 
 #### Considerations
 
-- Only supports svg icons.
+- Only supports SVG icons.
 - To use provided icons you need to import built-in icon directly (i.e. `ArrowUp`).
 
 ### Chakra UI Icon
@@ -234,7 +234,7 @@ The following section documents the DOM structure for the component from differe
 
 #### Considerations
 
-- Only supports svg icons.
+- Only supports SVG icons.
 - Icons are and can be added as part of the theme.
 
 ### Fabric Icon
@@ -288,8 +288,8 @@ The following section documents the DOM structure for the component from differe
 
 #### Considerations
 
+- Only supports SVG icons.
 - Renders by default as a block, and not an inline, element.
-- Only supports svg icons.
 
 ### Material-UI Icon
 
@@ -356,7 +356,7 @@ None.
 
 #### Considerations
 
-- Allows for both font and svg icons but only has svg icons built-in.
+- Allows for both font and SVG icons but only has SVG icons built-in.
 
 ### Recommended DOM
 
@@ -442,7 +442,37 @@ render () {
 
 ### Icon Registration
 
-[MAK-TODO]
+#### Fabric
+
+Fabric uses global registration for its icons which needs a call to an initialization function to be used. Below are wiki and code references into this process:
+- [Wiki page](https://github.com/OfficeDev/office-ui-fabric-react/wiki/Using-icons)
+- [Icon font generation tool](https://uifabricicons.azurewebsites.net)
+- [Main `initializeIcons` function](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/icons/src/index.ts)
+- [Icon registration utilities](https://github.com/OfficeDev/office-ui-fabric-react/blob/master/packages/styling/src/utilities/icons.ts)
+- [Icon component](https://github.com/OfficeDev/office-ui-fabric-react/tree/master/packages/office-ui-fabric-react/src/components/Icon)
+
+#### Stardust
+
+Stardust registers icons in the theme, with all default icons being SVGs but also supporting font icons via:
+
+```ts
+type ObjectOrFunc<TResult, TArg = {}> = ((arg: TArg) => TResult) | TResult;
+
+type FontIconSpec = ObjectOrFunc<{
+  content: string
+  fontFamily: string
+}>;
+```
+
+Below are wiki and code references into this process:
+- [SVG icon processing](https://github.com/microsoft/fluent-ui-react/blob/21c2f9e3e495b3094e0db4610e9f8834cdc135b0/packages/react/src/themes/teams/components/Icon/svg/ProcessedIcons/stardust-icons.sh#L36)
+- [Instructions on adding new SVG Icon](https://github.com/microsoft/fluent-ui-react/pull/585)
+- [Font icon registration into the theme (fontAwesome theme example)](https://github.com/microsoft/fluent-ui-react/blob/feat/generate-css/src/themes/teams/components/Icon/fontAwesomeIconStyles.ts)
+- [Font vs SVG icon rendering](https://github.com/microsoft/fluent-ui-react/blob/master/packages/react/src/themes/teams/components/Icon/iconStyles.ts)
+- [Icon styles as part of theme component styles](https://github.com/microsoft/fluent-ui-react/blob/de10e334fc039370c4fe4b425050327d57f3f515/packages/react/src/themes/teams/componentStyles.ts#L51)
+- [Merging icons as part of theme](https://github.com/microsoft/fluent-ui-react/blob/feat/generate-css/src/themes/teams/index.ts)
+
+> TODO: Decide on recommended thing to do. Leaning towards Stardust approach but worried about perf implications regarding icon definitions.
 
 ## Class names
 
