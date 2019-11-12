@@ -1,7 +1,13 @@
 # Change Log - @fluentui/react-theming
 
-This log was last generated on Mon, 11 Nov 2019 19:10:04 GMT and should not be manually modified.
+This log was last generated on Tue, 12 Nov 2019 18:48:52 GMT and should not be manually modified.
 
+## 0.1.3
+Tue, 12 Nov 2019 18:48:52 GMT
+
+### Patches
+
+- README (jdh@microsoft.com)
 ## 0.1.2
 Mon, 11 Nov 2019 19:10:04 GMT
 
