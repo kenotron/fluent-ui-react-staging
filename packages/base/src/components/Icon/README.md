@@ -365,6 +365,7 @@ After looking at all the component libraries above and taking into consideration
 
 ```html
 <i class="root" aria-hidden="true">
+  {fontIconName}
 </i>
 ```
 
@@ -382,33 +383,18 @@ From the recommended DOM above we can indicate which slots are going to be requi
 ## Behaviors
 
 Aria spec:
-https://www.w3.org/TR/wai-aria-1.1/#link
-https://www.w3.org/TR/wai-aria-practices/#link
+There's no aria spec available for icons.
 
 Fluent UI HIG:
-https://microsoft.sharepoint-df.com/:w:/r/teams/OPGUXLeads/_layouts/15/Doc.aspx?sourcedoc=%7BE585806E-01BF-4F37-BF59-12708E4CE81D%7D&file=Icons.docx&action=default&mobileredirect=true
+https://microsoft.sharepoint-df.com/:w:/r/teams/OPGUXLeads/_layouts/15/Doc.aspx?sourcedoc=%7B5113018C-05E7-44BF-B6D4-B164755B8D71%7D&file=Icon.docx&action=default&mobileredirect=true
 
 ### States
 
 The following section describes the different states in which a `Icon` can be throughout the course of interaction with it.
 
-#### Enabled state
+#### Default state
 
-An enabled `Icon` communicates interaction by having styling that invite the user to click/tap on it to navigate through content.
-
-#### Disabled state
-
-A disabled `Icon` is non-interactive, disallowing the user to click/tap on it to navigate through content.
-
-Typically disabled browser elements do now allow focus. This makes the control difficult for a blind user to know about it, or why it's disabled, without scanning the entire page. Therefore it is recommended to allow focus on disabled components and to make them readonly. This means we use `aria-disabled` attributes, and not `disabled` attributes, for defining a disabled state. This may sometimes require special attention to ignoring input events in the case a browser element might do something. In the past we've introduced an `allowDisabledFocus` prop for component users to control this behavior.
-
-#### Hovered state
-
-A hovered `Icon` changes styling to communicate that the user has placed a cursor above it.
-
-#### Focused state
-
-A focused `Icon` changes styling to communicate that the user has placed keyboard focus on it. This styling is usually the same to the one in the hovered state.
+An `Icon` has only one state, its default state. The `Icon` is not an interactive component and it's used only for representational purposes.
 
 #### States that need discussion
 
@@ -416,37 +402,25 @@ None.
 
 ### Keyboard interaction
 
-The following is a set of keys that interact with the `Icon` component:
-
-| Key                      | Description                                               |
-| ------------------------ | --------------------------------------------------------- |
-| `Enter`                  | Executes the `Icon` and moves focus to the `Icon` target. |
-| `Shift + F10` (Optional) | Opens a context menu for the `Icon`.                      |
+There is no keyboard interaction that occurs with the `Icon`.
 
 ### Cursor interaction
 
-Test: Possible to use this to capture mouse, though Safari does not have compatibility:
-https://developer.mozilla.org/en-US/docs/Web/API/Element/setPointerCapture
-
-- `mouseenter`: Should immediately change the styling of the `Icon` so that it appears to be hovered.
-- `mouseleave`: Should immediately remove the hovered styling of the `Icon`.
-- `mouseup`: If triggered while cursor is still inside of the `Icon's` boundaries, then it should execute the `Icon` and move focus to the `Icon` target.
+There is no cursor interaction that occurs with the `Icon`.
 
 ### Touch interaction
 
-The same behavior as above translated for touch events. This means that there is no equivalent for `mouseenter` and `mouseleave`, which makes it so that the hovered state cannot be accessed.
+There is no touch interaction that occurs with the `Icon`.
 
 ### Screen reader accessibility
 
 #### `root`:
 
-- Should render the native element using the `as` prop, defaulting to a native `a` element, or a native `button` element if the `href` prop has not been set.
-- Should mix in the native props expected for the `button` or `a` native elements depending on if the `href` prop has been set.
-- Should be keyboard tabbable and focusable.
+- Should not be tabbable nor focusable and should have `aria-hidden` applied to it.
 
 #### Accessibility concerns for the user.
 
-The `aria-label`, `aria-labelledby` and `aria-describedby` properties are surfaced to the component interface but are required to be set by the component user to meet accessibility requirements.
+All accessibility concerns would come from user manipulation of the component, so they would be a concern solely for the user and not for the component creator.
 
 ## Themability and customization
 
@@ -462,11 +436,13 @@ const FooIcon = BaseIcon.compose({
 });
 
 render () {
-  <FooIcon href="https://www.bing.com">
-    Go to bing!
-  </FooIcon>
+  <FooIcon name="Home" />
 }
 ```
+
+### Icon Registration
+
+[MAK-TODO]
 
 ## Class names
 
@@ -486,20 +462,9 @@ render () {
 
 | Name                      | Considerations |
 | ------------------------- | -------------- |
-| `backgroundColor`         |                |
-| `backgroundColorDisabled` |                |
-| `backgroundColorHovered`  |                |
 | `color`                   |                |
-| `colorDisabled`           |                |
-| `colorHovered`            |                |
-| `fontFamily`              |                |
 | `fontSize`                |                |
 | `fontWeight`              |                |
-| `textDecoration`          |                |
-
-### To be discussed
-
-- What do we do about high contrast? Do we provide additional tokens?
 
 ## Use cases
 
